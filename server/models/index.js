@@ -1,5 +1,4 @@
 const User = require('./User');
-const Interest = require('./Interest');
-const Match = require('./Match');
+const Fandom = require('./Fandom');
 
-module.exports = { User, Interest, Match};
+module.exports = { User, Fandom };
