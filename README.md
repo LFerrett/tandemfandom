@@ -70,8 +70,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Questions
-Questions or opportunities for collaboration can be directed to any member of the development team:  
+Questions or opportunities for collaboration can be directed to any member of the development team: 
+
 [Jose Dominguez](https://github.com/jdomindev)  
+
 [Katelynn Donahue](https://github.com/katelynndonahue) 
+
 [Lauren Ferrett](https://github.com/lferrett)   
+
 [Daniel Westiner](https://github.com/danielwestiner)
