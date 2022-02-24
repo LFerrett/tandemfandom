@@ -33,7 +33,10 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!, firstName: String!, lastName: String!): Auth
 
-    addFandom(_id: ID!, fandomId: ID!) : User
+    addFandom(_id: ID!, fandomId: ID!): User
+    removeFandom(_id: ID!, fandomId: ID!): User
+    addMatch(_id: ID!, userId: ID!): User
+
   }
 `;
 

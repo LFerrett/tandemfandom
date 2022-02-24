@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Fandom } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -9,6 +9,10 @@ const resolvers = {
         return User.findOne({ _id: context.user._id });
       }
       throw new AuthenticationError('You need to be logged in!');
+    },
+
+    fandoms: async () => {
+      return Fandom.find();
     },
 
 
@@ -43,18 +47,52 @@ const resolvers = {
       // if (context.user) {
           await User.findOneAndUpdate(
               { _id: args._id },
-              { $addToSet: { fandoms: {_id: args.fandomId } } },
+              { $addToSet: { fandoms: { _id: args.fandomId } } },
               { new: true, runValidators: true }
           );
       // }
       
       // throw new AuthenticationError('You need to be logged in!');
+      // { _id: context.user._id },
       // { $push: { fandoms: args.fandomId } },
     },
 
-   
-    
+    removeFandom: async (parent, args, context) => {
+      // if (context.user) {
+        await User.findOneAndUpdate(
+            { _id: args._id },
+            { $pull: { fandoms: { fandomId: args.fandomId } } },
+            { new: true, runValidators: true }
+        );
+        // if (!updatedUser) {
+        //     return res.status(404).json({ message: "Couldn't find user with this id!" });
+        //   }
+      // }
+
+      // throw new AuthenticationError('You need to be logged in!');
+      // { _id: context.user._id },
+    },
+
+    addMatch: async (parent, args, context) => {
+      // if (context.user) {
+          await User.findOneAndUpdate(
+              { _id: args._id },
+              { $addToSet: { matches: { _id: args.userId } } },
+              { new: true, runValidators: true }
+          );
+      // }
+      
+      // throw new AuthenticationError('You need to be logged in!');
+      // { _id: context.user._id },
+      // { $push: { fandoms: args.fandomId } },
+    }, 
+      
+      
+
   },
+
+  
+  
 };
 
 module.exports = resolvers;
