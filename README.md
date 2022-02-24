@@ -1,68 +1,77 @@
 # TandemFandom: A Fandom Dating App
 
-## Overview
+## Description
 
-Welcome to your third and final group project! This project serves as your best opportunity to showcase all the skills you’ve learned throughout this course and collaborate with the community of developers you’ve cultivated over the past six months. You’ll work with your group to build a performant and scalable MERN stack single-page application that fulfills a real-world need, with a focus on data and user demand.
+XXXX
 
-## Key Topics
+## Table of Contents
 
-The following topics will be covered in this unit:
+- [TandemFandom: A Fandom Dating App](#tandemfandom-a-fandom-dating-app)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Deployment](#deployment)
+  - [Installation](#installation)
+  - [User Story](#user-story)
+  - [Usage](#usage)
+  - [Credits](#credits)
+    - [Resources](#resources)
+  - [License](#license)
+  - [Questions](#questions)
 
-* Full-stack MERN applications
+## Deployment
 
-* [Git branching workflow](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows)
+TandemFandem is deployed on Heroku at: XXXXX
 
-* [Agile software development](https://en.wikipedia.org/wiki/Agile_software_development)
+## Installation
 
-* Collaborative development
+To run the app locally, clone the repository to your local development environment. Run npm install to install all dependencies. Source both the schema in MySQL. In a command terminal, navigate to the correct directory and first seed the application by running the command 'npm run build' and then start the server using the command 'npm start'.
 
-## Learning Objectives
+## User Story
 
-You will be employer-ready if you are able to:
+```md
+AS A person looking for a significant other or a friend
+I WANT an application that I can use to find other people in the same fandoms as me
+SO THAT I can talk to and meet other people with the same interests
+```
 
-* Speak technically about a feature you implemented in your project
+## Usage
 
-* Explain and execute git branching workflow in a collaborative project
+![Screenshot of Final Code]
 
-* Resolve merge conflicts
+## Credits
 
-* Explain agile software development
+Coding was completed by Jose Dominguez, Katelynn Donahue, Lauren Ferrett, and Daniel Westiner.
 
-* Design, build and deploy a full-stack MERN application to Heroku
+### Resources
+TBD
 
-* Prepare a professional presentation and repository README for your project
+## License
 
-## Homework
+MIT License
 
-With your group, you’ll again conceive and execute a design that solves a real-world problem. In creating your first collaborative MERN stack single-page application, you’ll combine a scalable MongoDB back end, a GraphQL API, and an Express.js and Node.js server with a React front end, implementing user authentication with JWT to build a user-focused platform. You’ll continue to build on the agile development methodologies you’ve used throughout this course. These include storing your project code in GitHub, managing your work with a project management tool, and implementing feature and bug fixes using the Git branch workflow and pull requests.
+Copyright (c) 2022 PlaySpace
 
-For this project, you should start from scratch. Doing so will allow you to revisit your front-end abilities in the context of React and solidify your understanding of working with multiple servers in a MERN application. Your skills have continued to improve since the first two projects, so naturally your approach will be different considering the experience you’ve gained with each new application you’ve built.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## Career Connection
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-For more information about career services, including coding milestones, demo days, technical toolkits, workshops, and additional resources, visit the [career services website](https://careernetwork.2u.com/?utm_medium=Academics&utm_source=boot_camp/).
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
-## Heads-Up
-
-In the next unit, you'll continue to work on your final projects. You'll end the week by presenting your project to your class. Once your project is complete, you'll want to update your professional materials and add your new project to your portfolio.
-
-## Resources
-
-Here are some additional resources to help solidify the topics covered in this unit.
-
-### Full-Stack Blog Posts
-
-Check out the [Full-Stack Blog](https://coding-boot-camp.github.io/full-stack/) for additional resources, like walkthroughs, articles, and installation guides.
-
-* 📖 [Setting up MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/how-to-set-up-mongodb-atlas)
-
-* 📖 [Deploy with Heroku and MongoDB Atlas](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas)
-
-### General
-
-Refer to these resources for additional information about topics covered in this unit.
-
-* 📖 [Project Management with GitHub Project Boards](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards)
-
----
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+## Questions
+Questions or opportunities for collaboration can be directed to any member of the development team:  
+[Jose Dominguez](https://github.com/jdomindev)  
+[Katelynn Donahue](https://github.com/katelynndonahue) 
+[Lauren Ferrett](https://github.com/lferrett)   
+[Daniel Westiner](https://github.com/danielwestiner)
