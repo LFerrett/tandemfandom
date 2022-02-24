@@ -37,7 +37,7 @@
     {
         "name": "Harry Potter",
         "description": "Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.",
-        "image": "https://pbs.twimg.com/profile_images/1480600300624826372/e1bYETBc_400x400.jpg",
+        "image": "https://pbs.twimg.com/profile_images/1480600300624826372/e1bYETBc_400x400.jpg"
     },
     {
         "name": "DC Comics",
@@ -52,11 +52,11 @@
     {
         "name": "The Office",
         "description": "The Office is an American mockumentary sitcom television series that depicts the everyday work lives of office employees in the Scranton, Pennsylvania branch of the fictional Dunder Mifflin Paper Company. It aired on NBC from March 24, 2005, to May 16, 2013, spanning a total of nine seasons.",
-        "image": ""
+        "image": "https://roost.nbcuni.com/bin/viewasset.html/content/dam/Peacock/Campaign/landingpages/library/theoffice/mainpage/office-social-min.png/_jcr_content/renditions/original"
     },
     {
         "name": "Rick and Morty",
         "description": "Rick and Morty is an American adult animated science fiction sitcom created by Justin Roiland and Dan Harmon for Cartoon Network's nighttime programming block, Adult Swim. The series follows the misadventures of cynical mad scientist Rick Sanchez and his good-hearted, but fretful grandson Morty Smith, who split their time between domestic life and interdimensional adventures.",
         "image": "https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_.jpg"
-    },
+    }
 ]
