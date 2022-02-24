@@ -1,8 +1,8 @@
 [
     {
-      "name": "Game of Thrones",
-      "description": "Game of Thrones is the immensely popular television show that has aired for four seasons on HBO. The show is based on the epic fantasy novel series, A Song of Fire and Ice, written by George R. R. Martin.",
-      "image": "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/4909/474909-h"
+        "name": "Game of Thrones",
+        "description": "Game of Thrones is the immensely popular television show that has aired for four seasons on HBO. The show is based on the epic fantasy novel series, A Song of Fire and Ice, written by George R. R. Martin.",
+        "image": "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/4909/474909-h"
     },
     {
         "name": "Doctor Who",
@@ -59,6 +59,4 @@
         "description": "Rick and Morty is an American adult animated science fiction sitcom created by Justin Roiland and Dan Harmon for Cartoon Network's nighttime programming block, Adult Swim. The series follows the misadventures of cynical mad scientist Rick Sanchez and his good-hearted, but fretful grandson Morty Smith, who split their time between domestic life and interdimensional adventures.",
         "image": "https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_.jpg"
     },
-
-    
 ]
