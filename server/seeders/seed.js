@@ -1,7 +1,7 @@
 const db = require('../config/connection');
 const { User, Fandom } = require('../models');
 const profileSeeds = require('./profileSeeds.json');
-const fandomSeeds = require('./fandomSeeds.json');
+const fandomSeeds = require('./fandomSeeds.json')
 
 db.once('open', async () => {
   try {
@@ -9,6 +9,18 @@ db.once('open', async () => {
     await Fandom.deleteMany({});
     // await User.create(profileSeeds);
     await Fandom.create(fandomSeeds);
+
+    console.log('all done!');
+    process.exit(0);
+  } catch (err) {
+    throw err;
+  }
+});
+
+db.once('open', async () => {
+  try {
+    await User.deleteMany({});
+    await User.create(fandomSeeds);
 
     console.log('all done!');
     process.exit(0);
