@@ -6,10 +6,17 @@ const typeDefs = gql`
     username: String!
     email: String!
     password: String!
-    firstName:
-    lastName:
-    interests: [String]!
+    firstName: String!
+    lastName: String!
+    fandoms: [ObjectId]
+    matches: [ObjectId]
+  }
 
+  type Fandom {
+    _id: ID
+    name: String!
+    description: String!
+    image: String!
   }
 
   type Auth {
@@ -18,11 +25,18 @@ const typeDefs = gql`
   }
 
   type Query {
-    
+    me: User
+    // get 
   }
 
   type Mutation {
-    
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+
+    // addFandom
+    // RemoveFandom
+    // saveMatch(userId: String!): User
+    // removeMatch(userId: String!): User
   }
 `;
 

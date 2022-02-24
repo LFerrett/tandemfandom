@@ -27,25 +27,17 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  gender: {
-    type: String,
-    required: true,
-  },
-  preference: {
-    type: String,
-    required: true,
-  },
-  interests: [
+  fandom: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Interest',
+      ref: 'Fandom',
     },
   ],
   matches: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-      },
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
   ],
 });
 
