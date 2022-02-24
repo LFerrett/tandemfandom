@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Game of Thrones",
+        "description": "Game of Thrones is the immensely popular television show that has aired for four seasons on HBO. The show is based on the epic fantasy novel series, A Song of Fire and Ice, written by George R. R. Martin.",
+        "image": "https://img1.hotstarext.com/image/upload/f_auto/sources/r1/cms/prod/4909/474909-h"
+    },
+    {
+        "name": "Doctor Who",
+        "description": "Doctor Who is a long-running British television series with a cult following — gained more momentum when it briefly introduced a new Doctor at the end of its 2013 season. The science fiction series is quickly increasing its equally fervent fan base in the United States",
+        "image": "https://images.immediate.co.uk/production/volatile/sites/3/2021/05/Doctor-Bundles-2022-c-Mark-Plastow-88f0677.jpg?quality=45&crop=10px,74px,3595px,2395px&resize=620,413?quality=90&resize=556,371"
+    },
+    {
+        "name": "Star Wars",
+        "description": "Star Wars is an American epic space opera multimedia franchise created by George Lucas, which began with the eponymous 1977 film and quickly became a worldwide pop-culture phenomenon.",
+        "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.starwars.com%2F&psig=AOvVaw2MLWQf3lYOvhVy-Bc-Y9Bz&ust=1645829337662000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCIiXjpq2mfYCFQAAAAAdAAAAABAD"
+    },
+    {
+        "name": "Star Trek",
+        "description": "The iconic series follows the crew of the starship USS Enterprise as it completes its missions in space in the 23rd century. Captain James T. Kirk -- along with half- human/half-Vulcan science officer Spock, ship Dr. Bones McCoy, Ensign Pavel Chekov, communications officer Lt. Nyota Uhura, helmsman Lt. Hikaru Sulu and chief engineer Lt. Cmdr. Montgomery Scotty Scott -- confront strange alien races, friendly and hostile alike, as they explore unknown worlds.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcQ0gF79KS_waLg877WcN9V4WSTmU51qCQAw&usqp=CAU"
+    },
+    {
+        "name": "Supernatural",
+        "description": "This haunting series follows the thrilling yet terrifying journeys of Sam and Dean Winchester, two brothers who face an increasingly sinister landscape as they hunt monsters. After losing their mother to a supernatural force, the brothers were raised by their father as soldiers who track mysterious and demonic creatures.",
+        "image": "https://flxt.tmsimg.com/assets/p7894212_b_v10_ab.jpg"
+    },
+    {
+        "name": "Marvel Cinematic Universe",
+        "description": "The Marvel Cinematic Universe is an American media franchise and shared universe centered on a series of superhero films produced by Marvel Studios. The films are based on characters that appear in American comic books published by Marvel Comics",
+        "image": "https://static.wikia.nocookie.net/marvelcomicsfanon/images/2/2b/Maxresdefault.png/revision/latest?cb=20190831090356"
+    },
+    {
+        "name": "Sherlock",
+        "description": "In this contemporary version of Sir Arthur Conan Doyle's detective stories, Dr. John Watson is a war vet just home from Afghanistan. He meets the brilliant but eccentric Holmes when the latter, who serves as a consultant to Scotland Yard.",
+        "image": "https://flxt.tmsimg.com/assets/p8204516_b_h8_ap.jpg"
+    },
+    {
+        "name": "Harry Potter",
+        "description": "Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.",
+        "image": "https://pbs.twimg.com/profile_images/1480600300624826372/e1bYETBc_400x400.jpg",
+    },
+    {
+        "name": "DC Comics",
+        "description": "DC Comics is one of the largest and oldest American comic book companies, with their first comic under the DC banner being published in 1937. The majority of its publications take place within the fictional DC Universe and feature numerous culturally iconic heroic characters, such as Superman, Batman, and Wonder Woman. It is widely known for some of the most famous and recognizable teams including the Justice League, the Justice Society of America, the Suicide Squad and the Teen Titans.",
+        "image": "https://cdn.vox-cdn.com/thumbor/FGuMs9RfeLfPvY1Xj9NQgUjVixE=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/22320292/dc_spotify.jpg"
+    },
+    {
+        "name": "WWE",
+        "description": "WWE is World Wrestling Entertainment, the single largest international professional wrestling business on the planet right now. Its history dates back to 1952, when it was founded as the Capitol Wrestling Corporation by Jess McMahon and Toots Mondt, and continues to this day.",
+        "image": "https://library.sportingnews.com/styles/amp_lead_image_16_9/s3/2021-10/wwe-logo-083115-usnews-getty-ftr_vdpq6vez387i1fcm3hm2hbihr.jpg?itok=GCCWT7fJ"
+    },
+    {
+        "name": "The Office",
+        "description": "The Office is an American mockumentary sitcom television series that depicts the everyday work lives of office employees in the Scranton, Pennsylvania branch of the fictional Dunder Mifflin Paper Company. It aired on NBC from March 24, 2005, to May 16, 2013, spanning a total of nine seasons.",
+        "image": ""
+    },
+    {
+        "name": "Rick and Morty",
+        "description": "Rick and Morty is an American adult animated science fiction sitcom created by Justin Roiland and Dan Harmon for Cartoon Network's nighttime programming block, Adult Swim. The series follows the misadventures of cynical mad scientist Rick Sanchez and his good-hearted, but fretful grandson Morty Smith, who split their time between domestic life and interdimensional adventures.",
+        "image": "https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_.jpg"
+    },
+]
