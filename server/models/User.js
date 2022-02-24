@@ -27,7 +27,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  fandom: [
+  fandoms: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Fandom',
