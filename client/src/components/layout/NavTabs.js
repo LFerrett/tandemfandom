@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../images/TFLogo.svg';
+import logo from '../../logo.svg';
 
-import '../assets/css/Nav.css';
+import '../assets/Nav.css';
 
 function NavTabs({ currentPage, handlePageChange }) {
   return (
