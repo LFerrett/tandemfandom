@@ -5,9 +5,9 @@ const fandomSeeds = require('./fandomSeeds.json')
 
 db.once('open', async () => {
   try {
-    // await User.deleteMany({});
+    await User.deleteMany({});
     await Fandom.deleteMany({});
-    // await User.create(profileSeeds);
+    await User.create(profileSeeds);
     await Fandom.create(fandomSeeds);
 
     console.log('all done!');
