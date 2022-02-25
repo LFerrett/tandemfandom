@@ -45,13 +45,13 @@ const resolvers = {
 
     addFandom: async (parent, args, context) => {
       // if (context.user) {
-          await User.findOneAndUpdate(
+        const updatedUser = await User.findOneAndUpdate(
               { _id: args._id },
               { $addToSet: { fandoms: { _id: args.fandomId } } },
               { new: true, runValidators: true }
           );
       // }
-      
+      return updatedUser; 
       // throw new AuthenticationError('You need to be logged in!');
       // { _id: context.user._id },
       // { $push: { fandoms: args.fandomId } },
@@ -59,11 +59,12 @@ const resolvers = {
 
     removeFandom: async (parent, args, context) => {
       // if (context.user) {
-        await User.findOneAndUpdate(
+        const updatedUser = await User.findOneAndUpdate(
             { _id: args._id },
-            { $pull: { fandoms: { fandomId: args.fandomId } } },
+            { $pull: { fandoms: args.fandomId } },
             { new: true, runValidators: true }
         );
+        return updatedUser;
         // if (!updatedUser) {
         //     return res.status(404).json({ message: "Couldn't find user with this id!" });
         //   }
@@ -75,13 +76,28 @@ const resolvers = {
 
     addMatch: async (parent, args, context) => {
       // if (context.user) {
-          await User.findOneAndUpdate(
+        const updatedUser = await User.findOneAndUpdate(
               { _id: args._id },
               { $addToSet: { matches: { _id: args.userId } } },
               { new: true, runValidators: true }
-          );
+          ).populate('matches');
       // }
+        return updatedUser ; 
       
+      // throw new AuthenticationError('You need to be logged in!');
+      // { _id: context.user._id },
+      // { $push: { fandoms: args.fandomId } },
+    },
+    
+    removeMatch: async (parent, args, context) => {
+      // if (context.user) {
+        const updatedUser = await User.findOneAndUpdate(
+              { _id: args._id },
+              { $pull: { matches: args.userId } },
+              { new: true, runValidators: true }
+          ).populate('matches');
+      // }
+        return updatedUser;  
       // throw new AuthenticationError('You need to be logged in!');
       // { _id: context.user._id },
       // { $push: { fandoms: args.fandomId } },

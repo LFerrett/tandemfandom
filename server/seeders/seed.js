@@ -16,15 +16,3 @@ db.once('open', async () => {
     throw err;
   }
 });
-
-db.once('open', async () => {
-  try {
-    await User.deleteMany({});
-    await User.create(fandomSeeds);
-
-    console.log('all done!');
-    process.exit(0);
-  } catch (err) {
-    throw err;
-  }
-});
