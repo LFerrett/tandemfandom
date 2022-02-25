@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Landing from './components/pages/Landing';
 import Main from './components/pages/Main';
 import Login from './components/pages/Login';
+import Signup from './components/pages/Signup';
 import Matches from './components/pages/Matches';
 import Profile from './components/pages/Profile';
 import Header from './components/layout/NavTabs';
@@ -67,6 +68,10 @@ function App() {
 
             <Route exact path="/login">
               <Login />
+            </Route>
+
+            <Route exact path="/signup">
+              <Signup />
             </Route>
 
           </div>
