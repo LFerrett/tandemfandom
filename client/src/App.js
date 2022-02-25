@@ -1,6 +1,15 @@
 import React from 'react'
 import './App.css';
-import Container from './components/Container';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import Landing from './components/pages/Landing';
+import Main from './components/pages/Main';
+import Login from './components/pages/Login';
+import Signup from './components/pages/Signup';
+import Matches from './components/pages/Matches';
+import Profile from './components/pages/Profile';
+import Header from './components/layout/NavTabs';
+import Footer from './components/layout/Footer';
 
 import {
   ApolloClient,
@@ -37,9 +46,41 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <Container />
+      <Router>
+        <div className="flex-column justify-flex-start min-100-vh">
+          <Header />
+          <div className="container">
+            <Route exact path="/">
+              <Landing />
+            </Route>
+            
+           <Route exact path="/main">
+              <Main />
+            </Route>
+
+            <Route exact path="/profile">
+              <Profile />
+            </Route>
+
+            <Route exact path="/matches">
+              <Matches />
+            </Route>
+
+            <Route exact path="/login">
+              <Login />
+            </Route>
+
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
+
+          </div>
+          <Footer />
+        </div>
+      </Router>
     </ApolloProvider>
   );
 }
+
 
 export default App;
