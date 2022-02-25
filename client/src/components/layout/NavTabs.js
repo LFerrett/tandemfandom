@@ -1,14 +1,14 @@
 import React from 'react';
-import logo from '../images/TFLogo.svg';
+// import logo from '../images/TFLogo.svg';
 
-import '../assets/css/Nav.css';
+import '../assets/Nav.css';
 
 function NavTabs({ currentPage, handlePageChange }) {
   return (
     <ul className="nav justify-content-center nav-tabs">
       <li className="nav-item">
       <a className="navbar-brand" href="/#">
-      <img src={logo} alt="Tandem Fandom"/>
+      {/* <img src={logo} alt="Tandem Fandom"/> */}
     </a>
       </li>
       <li className="nav-item">

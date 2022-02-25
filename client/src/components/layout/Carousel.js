@@ -1,9 +1,9 @@
-import { Carousel } from 'bootstrap';
+import { Carousel } from 'react-bootstrap';
 import React from 'react';
-import '../assets/css/Carousel.css';
+import '../assets/Carousel.css';
 
-function Carousel() {
-    return 
+function CarouselComponent() {
+    return (
   <Carousel fade>
   <Carousel.Item>
     <img
@@ -41,6 +41,7 @@ function Carousel() {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
+    )
   };
 
-  export default Carousel;
+  export default CarouselComponent;
