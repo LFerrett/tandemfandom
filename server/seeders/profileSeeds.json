@@ -1,78 +1,170 @@
 [
   {
-    "name": "Brian Kernighan",
-    "email": "bkernighan@techfriends.dev",
+    "username": "rocky",
+    "email": "therock@rocksmock.com",
     "password": "password01",
-    "skills": ["AWK", "AMPL", "Unix"]
+    "firstName": "Rocky",
+    "lastName": "Rhoades"
   },
   {
-    "name": "Max Kanat-Alexander",
-    "email": "mkanatalexander@techfriends.dev",
+    "username": "myles",
+    "email": "mylesd00d@email.biz",
     "password": "password02",
-    "skills": ["Java", "Perl", "Apache", "Python"]
+    "firstName": "Myles",
+    "lastName": "Long"
   },
   {
-    "name": "Amiko",
-    "email": "amiko@techfriends.dev",
+    "username": "pepe",
+    "email": "pepethepizzaman@gmail.com",
     "password": "password03",
-    "skills": ["NodeJS", "MySQL", "MongoDB", "React", "CSS-in-JS"]
+    "firstName": "Pepe",
+    "lastName": "Rowny"
   },
   {
-    "name": "Kent Beck",
-    "email": "kbeck@techfriends.dev",
+    "username": "russell",
+    "email": "russell@russell.org",
     "password": "password04",
-    "skills": [
-      "Test-Driven Development",
-      "Extreme Programming",
-      "Software Design Patterns",
-      "JUnit"
-    ]
+    "firstName": "Russell",
+    "lastName": "Sprouts"
   },
   {
-    "name": "Edward V. Berard",
-    "email": "evberard@techfriends.dev",
+    "username": "jack",
+    "email": "jackpot@jack.net",
     "password": "password05",
-    "skills": ["Object-Oriented Design"]
+    "firstName": "Jack",
+    "lastName": "Pot"
   },
   {
-    "name": "Alan Kay",
-    "email": "akay@techfriends.dev",
+    "username": "harry",
+    "email": "mynameisharry@email.com",
     "password": "password06",
-    "skills": [
-      "Graphical User Interface (GUI) Design",
-      "Jazz Guitar",
-      "Education"
-    ]
+    "firstName": "Harry",
+    "lastName": "Legg"
   },
   {
-    "name": "C.A.R. Hoare",
-    "email": "choare@techfriends.dev",
+    "username": "corey",
+    "email": "corey@gmail.com",
     "password": "password07",
-    "skills": ["Algorithms", "Quicksort", "Hoare Logic"]
+    "firstName": "Corey",
+    "lastName": "Ander"
   },
   {
-    "name": "David Thomas",
-    "email": "dthomas@techfriends.dev",
+    "username": "alfred",
+    "email": "myemail@email.net",
     "password": "password08",
-    "skills": ["Author", "Code Kata", "Ruby", "Pragmatic Programming"]
+    "firstName": "Al",
+    "lastName": "Fresco"
   },
   {
-    "name": "Donald Knuth",
-    "email": "dknuth@techfriends.dev",
+    "username": "adam",
+    "email": "adam@email.com",
     "password": "password09",
-    "skills": ["TeX Computer Typesetting", "Algorithms", "Author"]
+    "firstName": "Adam",
+    "lastName": "Zappel"
   },
   {
-    "name": "Lernantino",
-    "email": "lernantino@techfriends.dev",
+    "username": "forrest",
+    "email": "forrest@sierraclub.org",
     "password": "password10",
-    "skills": [
-      "JavaScript",
-      "CSS",
-      "HTML",
-      "Design Systems",
-      "Typescript",
-      "PWAs"
-    ]
-  }
+    "firstName": "Forrest",
+    "lastName": "Green"
+  },
+  {
+    "username": "jay",
+    "email": "jay@email.net",
+    "password": "password11",
+    "firstName": "Jay",
+    "lastName": "Walker"
+  },
+  {
+    "username": "mike",
+    "email": "mike@mike.net",
+    "password": "password12",
+    "firstName": "Mike",
+    "lastName": "Stand"
+  },
+  {
+    "username": "olive",
+    "email": "heyitsolive@email.net",
+    "password": "password13",
+    "firstName": "Olive",
+    "lastName": "Branch"
+  },
+  {
+    "username": "kerri",
+    "email": "kerrioki@karoake.com",
+    "password": "password14",
+    "firstName": "Kerri",
+    "lastName": "Oki"
+  },
+  {
+    "username": "claire",
+    "email": "claire@claires.com",
+    "password": "password15",
+    "firstName": "Claire",
+    "lastName": "Annette"
+  },
+  {
+    "username": "marcia",
+    "email": "marcia@gmail.com",
+    "password": "password16",
+    "firstName": "Marcia",
+    "lastName": "Mellow"
+  },
+  {
+    "username": "sue",
+    "email": "sue@email.net",
+    "password": "password17",
+    "firstName": "Sue",
+    "lastName": "Flay"
+  },
+  {
+    "username": "tish",
+    "email": "tish@email.com",
+    "password": "password18",
+    "firstName": "Tish",
+    "lastName": "Hughes"
+  },
+  {
+    "username": "sally",
+    "email": "sally@sally.org",
+    "password": "password19",
+    "firstName": "Sally",
+    "lastName": "Mander"
+  },
+  {
+    "username": "hazel",
+    "email": "hazel@email.net",
+    "password": "password20",
+    "firstName": "Hazel",
+    "lastName": "Nutt"
+  },
+  {
+    "username": "dinah",
+    "email": "dinah@gmail.com",
+    "password": "password21",
+    "firstName": "Dinah",
+    "lastName": "Soares"
+  },
+  {
+    "username": "bea",
+    "email": "beatrice@gmail.com",
+    "password": "password22",
+    "firstName": "Bea",
+    "lastName": "Miner"
+  },
+  {
+    "username": "april",
+    "email": "april@email.com",
+    "password": "password23",
+    "firstName": "April",
+    "lastName": "Schauers"
+  },
+  {
+    "username": "anna",
+    "email": "anna@snakes.com",
+    "password": "password24",
+    "firstName": "Anna",
+    "lastName": "Conda"
+  },
 ]
