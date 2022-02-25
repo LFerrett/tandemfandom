@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
 import NavTabs from './NavTabs';
-import Home from './pages/Home';
-import About from './pages/About';
-import Blog from './pages/Blog';
-import Contact from './pages/Contact';
+import Landing from './pages/Landing';
+import Main from './pages/Main';
+import Profile from './pages/Profile';
+import Matches from './pages/Matches';
 
-export default function PortfolioContainer() {
+export default function Container() {
   const [currentPage, setCurrentPage] = useState('Home');
 
   // This method is checking to see what the value of `currentPage` is. Depending on the value of currentPage, we return the corresponding component to render.
   const renderPage = () => {
-    if (currentPage === 'Home') {
-      return <Home />;
+    if (currentPage === 'Landing') {
+      return <Landing />;
     }
-    if (currentPage === 'About') {
-      return <About />;
+    if (currentPage === 'Profile') {
+      return <Profile />;
     }
-    if (currentPage === 'Blog') {
-      return <Blog />;
+    if (currentPage === 'Matches') {
+      return <Matches />;
     }
-    return <Contact />;
+    if (currentPage === 'Main') {
+      return <Main />;
+    }
   };
 
   const handlePageChange = (page) => setCurrentPage(page);
