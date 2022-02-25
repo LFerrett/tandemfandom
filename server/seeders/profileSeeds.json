@@ -1,0 +1,170 @@
+[
+  {
+    "username": "rocky",
+    "email": "therock@rocksmock.com",
+    "password": "password01",
+    "firstName": "Rocky",
+    "lastName": "Rhoades"
+  },
+  {
+    "username": "myles",
+    "email": "mylesd00d@email.biz",
+    "password": "password02",
+    "firstName": "Myles",
+    "lastName": "Long"
+  },
+  {
+    "username": "pepe",
+    "email": "pepethepizzaman@gmail.com",
+    "password": "password03",
+    "firstName": "Pepe",
+    "lastName": "Rowny"
+  },
+  {
+    "username": "russell",
+    "email": "russell@russell.org",
+    "password": "password04",
+    "firstName": "Russell",
+    "lastName": "Sprouts"
+  },
+  {
+    "username": "jack",
+    "email": "jackpot@jack.net",
+    "password": "password05",
+    "firstName": "Jack",
+    "lastName": "Pot"
+  },
+  {
+    "username": "harry",
+    "email": "mynameisharry@email.com",
+    "password": "password06",
+    "firstName": "Harry",
+    "lastName": "Legg"
+  },
+  {
+    "username": "corey",
+    "email": "corey@gmail.com",
+    "password": "password07",
+    "firstName": "Corey",
+    "lastName": "Ander"
+  },
+  {
+    "username": "alfred",
+    "email": "myemail@email.net",
+    "password": "password08",
+    "firstName": "Al",
+    "lastName": "Fresco"
+  },
+  {
+    "username": "adam",
+    "email": "adam@email.com",
+    "password": "password09",
+    "firstName": "Adam",
+    "lastName": "Zappel"
+  },
+  {
+    "username": "forrest",
+    "email": "forrest@sierraclub.org",
+    "password": "password10",
+    "firstName": "Forrest",
+    "lastName": "Green"
+  },
+  {
+    "username": "jay",
+    "email": "jay@email.net",
+    "password": "password11",
+    "firstName": "Jay",
+    "lastName": "Walker"
+  },
+  {
+    "username": "mike",
+    "email": "mike@mike.net",
+    "password": "password12",
+    "firstName": "Mike",
+    "lastName": "Stand"
+  },
+  {
+    "username": "olive",
+    "email": "heyitsolive@email.net",
+    "password": "password13",
+    "firstName": "Olive",
+    "lastName": "Branch"
+  },
+  {
+    "username": "kerri",
+    "email": "kerrioki@karoake.com",
+    "password": "password14",
+    "firstName": "Kerri",
+    "lastName": "Oki"
+  },
+  {
+    "username": "claire",
+    "email": "claire@claires.com",
+    "password": "password15",
+    "firstName": "Claire",
+    "lastName": "Annette"
+  },
+  {
+    "username": "marcia",
+    "email": "marcia@gmail.com",
+    "password": "password16",
+    "firstName": "Marcia",
+    "lastName": "Mellow"
+  },
+  {
+    "username": "sue",
+    "email": "sue@email.net",
+    "password": "password17",
+    "firstName": "Sue",
+    "lastName": "Flay"
+  },
+  {
+    "username": "tish",
+    "email": "tish@email.com",
+    "password": "password18",
+    "firstName": "Tish",
+    "lastName": "Hughes"
+  },
+  {
+    "username": "sally",
+    "email": "sally@sally.org",
+    "password": "password19",
+    "firstName": "Sally",
+    "lastName": "Mander"
+  },
+  {
+    "username": "hazel",
+    "email": "hazel@email.net",
+    "password": "password20",
+    "firstName": "Hazel",
+    "lastName": "Nutt"
+  },
+  {
+    "username": "dinah",
+    "email": "dinah@gmail.com",
+    "password": "password21",
+    "firstName": "Dinah",
+    "lastName": "Soares"
+  },
+  {
+    "username": "bea",
+    "email": "beatrice@gmail.com",
+    "password": "password22",
+    "firstName": "Bea",
+    "lastName": "Miner"
+  },
+  {
+    "username": "april",
+    "email": "april@email.com",
+    "password": "password23",
+    "firstName": "April",
+    "lastName": "Schauers"
+  },
+  {
+    "username": "anna",
+    "email": "anna@snakes.com",
+    "password": "password24",
+    "firstName": "Anna",
+    "lastName": "Conda"
+  }
+]

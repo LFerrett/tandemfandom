@@ -1,0 +1,14 @@
+.nav {
+  background-color: #627e8d;
+  font-size: 1.5rem;
+}
+
+.nav a {
+  color: white;
+}
+
+@media (max-width: 912px) {
+  .brand-logo{
+    margin-left: 0rem;
+  }
+}
