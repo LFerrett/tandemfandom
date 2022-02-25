@@ -1,0 +1,23 @@
+footer {
+  background-color: #10283e;
+}
+
+.contact-links{
+  display: flex;
+  justify-content: center;
+  color: #c3cca2;
+}
+
+.contact-links a, p{
+  margin-left: 5rem;
+  margin-right: 5rem;
+  align-self: center;
+  color: #88afa6;
+}
+
+@media (max-width: 912px){
+  .contact-links a, p{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
