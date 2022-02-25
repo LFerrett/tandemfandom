@@ -1,12 +1,10 @@
-import React from 'react';
-import '../assets/Footer.css';
+import React from "react";
+import "../assets/Footer.css";
 
 function Footer() {
-  return(
-    <div className='container'>
-      <div className='row s12 right contact-links'>
-       <p>&copy; Copyright 2022 TandemFandom</p>
-      </div>
+  return (
+    <div className="footer">
+      <a href="http://www.github.com">&copy; Copyright TandemFandom 2022</a>
     </div>
   );
 }
