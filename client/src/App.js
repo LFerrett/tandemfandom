@@ -68,6 +68,7 @@ function App() {
             <Route exact path="/login">
               <Login />
             </Route>
+            
 
           </div>
           <Footer />
