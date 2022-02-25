@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.css';
 import Container from './components/Container';
 
@@ -35,7 +36,9 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <Container />
+    <ApolloProvider client={client}>
+      <Container />
+    </ApolloProvider>
   );
 }
 

@@ -4,6 +4,7 @@ import Landing from './pages/Landing';
 import Main from './pages/Main';
 import Profile from './pages/Profile';
 import Matches from './pages/Matches';
+import Login from './pages/Login';
 import Footer from './layout/Footer';
 
 export default function Container() {
@@ -22,6 +23,9 @@ export default function Container() {
     }
     if (currentPage === 'Main') {
       return <Main />;
+    }
+    if (currentPage === 'Login') {
+      return <Login />;
     }
   };
 
