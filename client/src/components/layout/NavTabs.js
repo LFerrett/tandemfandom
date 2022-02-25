@@ -1,10 +1,16 @@
 import React from 'react';
+import logo from '../images/TFLogo.svg';
 
-// Here we are using object destructuring assignment to pluck off our variables from the props object
-// We assign them to their own variable names
+import '../assets/css/Nav.css';
+
 function NavTabs({ currentPage, handlePageChange }) {
   return (
-    <ul className="nav nav-tabs">
+    <ul className="nav justify-content-center nav-tabs">
+      <li className="nav-item">
+      <a className="navbar-brand" href="/#">
+      <img src={logo} alt="Tandem Fandom"/>
+    </a>
+      </li>
       <li className="nav-item">
         <a
           href="#main"
@@ -42,8 +48,16 @@ function NavTabs({ currentPage, handlePageChange }) {
           onClick={() => handlePageChange('Login')}
           // Check to see if the currentPage is `Matches`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
           className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
+        >Login</a>
+      </li>
+      <li className="nav-item">
+      <a
+          href="#logout"
+          onClick={() => handlePageChange('Logout')}
+          // Check to see if the currentPage is `Matches`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+          className={currentPage === 'Logout' ? 'nav-link active' : 'nav-link'}
         >
-          Login
+          Logout
         </a>
       </li>
     </ul>

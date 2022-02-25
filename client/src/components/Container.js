@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import NavTabs from './NavTabs';
+import NavTabs from './layout/NavTabs';
 import Landing from './pages/Landing';
 import Main from './pages/Main';
 import Profile from './pages/Profile';
 import Matches from './pages/Matches';
 import Login from './pages/Login';
+import Footer from './layout/Footer';
 
 export default function Container() {
   const [currentPage, setCurrentPage] = useState('Home');
@@ -36,6 +37,7 @@ export default function Container() {
       <NavTabs currentPage={currentPage} handlePageChange={handlePageChange} />
       {/* Here we are calling the renderPage method which will return a component  */}
       {renderPage()}
+      <Footer />
     </div>
   );
 }
