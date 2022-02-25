@@ -1,23 +1,35 @@
-footer {
+.footer {
+  margin-top: 1rem;
+  padding: 1rem;
   background-color: #10283e;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
 }
 
-.contact-links{
-  display: flex;
-  justify-content: center;
-  color: #c3cca2;
-}
-
-.contact-links a, p{
-  margin-left: 5rem;
-  margin-right: 5rem;
-  align-self: center;
-  color: #88afa6;
-}
-
-@media (max-width: 912px){
-  .contact-links a, p{
-    margin-left: 1rem;
-    margin-right: 1rem;
+a:link {
+    color: #c3cca2;
+    background-color: transparent;
+    text-decoration: none;
   }
-}
+  
+  a:visited {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #d49421;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: #88afa6;
+    background-color: transparent;
+    text-decoration: underline;
+  }
