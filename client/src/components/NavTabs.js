@@ -9,7 +9,7 @@ function NavTabs({ currentPage, handlePageChange }) {
         <a
           href="#main"
           onClick={() => handlePageChange('Main')}
-          // This is a conditional (ternary) operator that checks to see if the current page is "Home"
+          // This is a conditional (ternary) operator that checks to see if the current page is "Home or Home"
           // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
           className={currentPage === 'Main' ? 'nav-link active' : 'nav-link'}
         >
@@ -20,7 +20,7 @@ function NavTabs({ currentPage, handlePageChange }) {
         <a
           href="#profile"
           onClick={() => handlePageChange('Profile')}
-          // Check to see if the currentPage is `About`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+          // Check to see if the currentPage is `Profile`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
           className={currentPage === 'Profile' ? 'nav-link active' : 'nav-link'}
         >
           Profile
@@ -30,7 +30,7 @@ function NavTabs({ currentPage, handlePageChange }) {
         <a
           href="#matches"
           onClick={() => handlePageChange('Matches')}
-          // Check to see if the currentPage is `Blog`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+          // Check to see if the currentPage is `Matches`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
           className={currentPage === 'Matches' ? 'nav-link active' : 'nav-link'}
         >
           Matches
