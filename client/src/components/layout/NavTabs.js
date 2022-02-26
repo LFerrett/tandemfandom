@@ -1,52 +1,47 @@
-import React from 'react';
+import React from "react";
 
-import { Link } from 'react-router-dom';
-import '../assets/Nav.css';
-import logo from '../images/TFLogo.svg';
+import { Link } from "react-router-dom";
+import "../assets/Nav.css";
+import logo from "../images/TFLogo.svg";
 
 function NavTabs() {
   return (
-    <ul className="nav justify-content-center nav-tabs">
-    <li className="nav-item">
-    <a className="navbar-brand" href="/#">
-    <img src={logo} alt="Tandem Fandom"/>
-  </a>
-    </li>
+    <nav className="navbar navbar-expand-lg navbar-light py-3">
+      <a className="navbar-brand" href="#"><img src={logo} alt="Tandem Fandom"/></a>
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
+  </button>
 
-    <li className="nav-item">
-    <Link className="navbar-brand" to="/Profile">
-        <h1 className="m-0" style={{ fontSize: '3rem' }}>
+  <div className="collapse navbar-collapse" idName="navbarNav">
+    <ul className="navbar-nav mr-auto">
+     
+      <li className="nav-item">
+        <Link className="navbar-brand" to="/Profile">
           Profile
-        </h1>
-      </Link>
-    </li>
+        </Link>
+      </li>
 
-    <li className="nav-item">
-    <Link className="navbar-brand" to="/Matches">
-        <h1 className="m-0" style={{ fontSize: '3rem' }}>
+      <li className="nav-item">
+        <Link className="navbar-brand" to="/Matches">
           Matches
-        </h1>
-      </Link>
-    </li>
+        </Link>
+      </li>
 
-    <li className="nav-item">
-    <Link className="navbar-brand" to="/Login">
-        <h1 className="m-0" style={{ fontSize: '3rem' }}>
+      <li className="nav-item">
+        <Link className="navbar-brand" to="/Login">
           Login
-        </h1>
-      </Link>
-    </li>
+        </Link>
+      </li>
 
-    <li className="nav-item">
-    <Link className="navbar-brand" to="/Signup">
-        <h1 className="m-0" style={{ fontSize: '3rem' }}>
+      <li className="nav-item">
+        <Link className="navbar-brand" to="/Signup">
           Signup
-        </h1>
-      </Link>
-    </li>
-
+        </Link>
+      </li>
     </ul>
+  </div>
+</nav>
   );
-};
+}
 
 export default NavTabs;
