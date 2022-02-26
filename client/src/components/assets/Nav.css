@@ -1,9 +1,8 @@
-.nav {
-  background-color: #627e8d;
-  font-size: .5rem;
+.navbar {
+  background-color: #627e8d; 
 }
 
-.nav a {
+.navbar a:hover {
   color: white;
 }
 
