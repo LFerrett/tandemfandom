@@ -1,6 +1,7 @@
 import React from 'react';
 import './../assets/Landing.css'
 import Logo from './../images/TFLogo.svg';
+import LandingCard from '../layout/LandingCard';
 
 export default function Landing() {
   return (
