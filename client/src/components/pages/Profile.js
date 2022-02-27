@@ -77,23 +77,27 @@ export default function Profile() {
           <div className="img-landing">
           <ul className="image-grid">
             {uploadedImages.length ? (
-              uploadedImages.map((image) => (
+              uploadedImages.map((image, index) => ( index === 0 && 
                 <li>
                   <img className="img-fluid profile-img" src={image} alt="profile images" />
                 </li>
               ))
             ) : (
-              <p>Uploaded images will appear here</p>
+              <p></p>
             )}
           </ul>
         </div>
       </div>
-      <div>
+      <div className="container">
         <h1>{`${profile.name}'s`} Profile Page</h1>
-        <form action="">
-          {fandoms.map((fandom, index) => {
+        
+              <div className="container">
+              <form action="">
+          
+              <div className="row">
+              {fandoms.map((fandom, index) => {
             return (
-              <div className="card" style={{ width: `18rem` }} key={fandom._id}>
+              <div className="card col-4" style={{ width: `18rem` }} key={fandom._id}>
                 <img
                   className="card-img-top"
                   src={`${fandom.image}`}
@@ -122,9 +126,14 @@ export default function Profile() {
                   </div>
                 </div>
               </div>
+            
+          
             );
           })}
+        </div>
         </form>
+        
+        </div>
       </div>
     </div>
   );
