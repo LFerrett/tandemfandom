@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import Auth from "../../utils/auth";
+import "./../assets/Profile.css";
 import ImageUploading from "react-images-uploading";
 import ReactDom from "react-dom";
 import SimpleFileUpload from 'react-simple-file-upload'
@@ -11,8 +12,10 @@ import { ADD_FANDOM } from "../../utils/mutations";
 
 export default function Profile() {
   // Daniel's edits
+  const [uploadedImages, setUploadedImages] = useState([])
 
-  function handleFile(url){
+  function handleFile(url) {
+    setUploadedImages([...uploadedImages, url])
     console.log('The URL of the file is ' + url)
   }
   // Jose's edits
@@ -64,11 +67,26 @@ export default function Profile() {
       <div>
         <h1>Profile Page</h1>
         <p>Profile Page goes here</p>
-        <SimpleFileUpload
-          apiKey="a576e70cb4dce38730545ffcbe16a477"
-          onSuccess={handleFile}
-        />
-
+  
+          <SimpleFileUpload
+            apiKey="a576e70cb4dce38730545ffcbe16a477"
+            onSuccess={handleFile}
+          />
+        </div>
+        <div className='upload-wrapper'>
+          <div className="img-landing">
+          <ul className="image-grid">
+            {uploadedImages.length ? (
+              uploadedImages.map((image) => (
+                <li>
+                  <img className="img-fluid profile-img" src={image} alt="profile images" />
+                </li>
+              ))
+            ) : (
+              <p>Uploaded images will appear here</p>
+            )}
+          </ul>
+        </div>
       </div>
       <div>
         <h1>{`${profile.name}'s`} Profile Page</h1>
