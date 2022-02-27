@@ -42,7 +42,7 @@ function CarouselComponent() {
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption></>
   </Carousel.Item>
-  <><Carousel.Item>
+  </Carousel.Item>
       <img
         className="d-block w-100"
         src="holder.js/800x400?text=Fourth slide&bg=282c34"
@@ -52,12 +52,13 @@ function CarouselComponent() {
         <h3>Fifth slide label</h3>
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
       </Carousel.Caption>
-    </Carousel.Item><Carousel.Item>
+    </><Carousel.Item>
         <img
           className="d-block w-100"
           src="holder.js/800x400?text=Fifth slide&bg=282c34"
           alt="Fifth slide" />
+          <Carousel.Item/>
         )
         };
 
-        export default CarouselComponent;</></>
+        export default CarouselComponent;
