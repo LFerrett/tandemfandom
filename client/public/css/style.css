@@ -204,3 +204,19 @@ a:focus,
   outline: none;
   outline-offset: none;
 }
+
+#features {
+  background: #f6f6f6;
+}
+#features i.fa {
+  font-size: 38px;
+  margin-bottom: 20px;
+  transition: all 0.5s;
+  color: #fff;
+  width: 100px;
+  height: 100px;
+  padding: 30px 0;
+  border-radius: 50%;
+  background: linear-gradient(to right, #c3cca2 0%, #627e8d 100%);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+}
