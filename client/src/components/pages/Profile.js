@@ -39,6 +39,11 @@ export default function Profile() {
   //   onChange(newData.filter(x => x.checked));
   // };
 
+  handleInputChange({ target }) ;{
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    this.setState({ [target.name]: value });
+}
+
   const userDataLength = Object.keys(userData).length;
 
   const [updatedUser, { error }] = useMutation(ADD_FANDOM);
@@ -121,7 +126,7 @@ export default function Profile() {
                       className="btn-check"
                       id="btn-check-outlined"
                       autoComplete="off"
-                      // onChange={toggle}
+                      onChange={handleInputChange}
                     />
                     <label
                       id="label"
