@@ -15,6 +15,10 @@ const resolvers = {
       return Fandom.find();
     },
 
+    users: async () => {
+      return User.find();
+    },
+
 
   },
 

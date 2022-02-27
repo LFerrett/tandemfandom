@@ -27,6 +27,7 @@ const typeDefs = gql`
   type Query {
     me: User 
     fandoms: [Fandom]
+    users: [User]
   }
 
   type Mutation {

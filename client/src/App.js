@@ -77,7 +77,7 @@ function App() {
             
 
             <Route exact path="/signup">
-              <SignupForm />
+              <Signup />
             </Route>
           </div>
           <Footer />
