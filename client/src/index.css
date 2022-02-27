@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#root {
+  padding-bottom: 55px !important;
+}
+
+.container {
+  padding: 55px 55px;
+  min-height: calc(100vh - 130px)
+}

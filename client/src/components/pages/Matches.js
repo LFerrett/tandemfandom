@@ -71,7 +71,6 @@ export default function Matches() {
         );
       })}
       </div>
-      ;
     </div>
   );
 }
