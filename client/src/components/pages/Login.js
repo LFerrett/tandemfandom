@@ -22,7 +22,6 @@ const Login = (props) => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
     try {
       const { data } = await login({
         variables: { ...formState },
@@ -48,10 +47,7 @@ const Login = (props) => {
           <div className="card-body">
             {data ? (
               <p>
-                Success! You may now head{' '}
-                <BrowserRouter>
-                  <Link to="/">back to the homepage.</Link>
-                </BrowserRouter>
+                Success!
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
