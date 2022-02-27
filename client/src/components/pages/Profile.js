@@ -96,7 +96,7 @@ export default function Profile() {
             <div className="row">
               {fandoms.map((fandom, index) => {
                 return (
-                  <div className="card col-4" style={{ width: `18rem` }} key={fandom._id}>
+                  <div className="card col-lg-4 col-md-6 col-sm-12" style={{ width: `18rem` }} key={fandom._id}>
                     <img
                       className="card-img-top"
                       src={`${fandom.image}`}
