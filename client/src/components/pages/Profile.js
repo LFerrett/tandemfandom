@@ -3,6 +3,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import Auth from "../../utils/auth";
 import ImageUploading from "react-images-uploading";
 import ReactDom from "react-dom";
+import SimpleFileUpload from 'react-simple-file-upload'
 
 import { GET_ME } from "../../utils/queries";
 import { GET_FANDOMS } from "../../utils/queries";
@@ -11,14 +12,9 @@ import { ADD_FANDOM } from "../../utils/mutations";
 export default function Profile() {
   // Daniel's edits
 
-  const [images, setImages] = React.useState([]);
-  const maxNumber = 1;
-  const onChange = (imageList, addUpdateIndex) => {
-    // data for submit
-    console.log(imageList, addUpdateIndex);
-    setImages(imageList);
-  };
-
+  function handleFile(url){
+    console.log('The URL of the file is ' + url)
+  }
   // Jose's edits
   const { load, pdata } = useQuery(GET_ME);
   const profile = pdata?.me || {};
@@ -68,37 +64,11 @@ export default function Profile() {
       <div>
         <h1>Profile Page</h1>
         <p>Profile Page goes here</p>
+        <SimpleFileUpload
+          apiKey="a576e70cb4dce38730545ffcbe16a477"
+          onSuccess={handleFile}
+        />
 
-        <ImageUploading
-          multiple
-          value={images}
-          onChange={onChange}
-          maxNumber={maxNumber}
-          dataURLKey="data_url"
-        >
-          {({
-            imageList,
-            onImageUpload,
-            onImageRemoveAll,
-            onImageUpdate,
-            onImageRemove,
-          }) => (
-            <div className="upload__image-wrapper">
-              <button onClick={onImageUpload}>Upload your image</button>
-              &nbsp;
-              <button onClick={onImageRemoveAll}>Remove your image</button>
-              {imageList.map((image, index) => (
-                <div key={index} className="image-item">
-                  <img src={image.data_url} alt="" width="100" />
-                  <div className="image-item__btn-wrapper">
-                    <button onClick={() => onImageUpdate(index)}>Update</button>
-                    <button onClick={() => onImageRemove(index)}>Remove</button>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </ImageUploading>
       </div>
       <div>
         <h1>{`${profile.name}'s`} Profile Page</h1>
@@ -121,7 +91,7 @@ export default function Profile() {
                       className="btn-check"
                       id="btn-check-outlined"
                       autoComplete="off"
-                      // onChange={toggle}
+                    // onChange={toggle}
                     />
                     <label
                       id="label"
