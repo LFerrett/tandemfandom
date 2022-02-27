@@ -16,9 +16,26 @@ export const GET_ME = gql`
     }
 `;
 
+export const GET_USERS = gql`
+    query users {
+        users {
+            _id
+            username
+            firstName
+            lastName
+            fandoms {
+                _id
+                description
+                name
+            }
+        }
+    }
+`;
+
 export const GET_FANDOMS = gql`
     query fandoms {
         fandoms {
+            _id
             name
             description
             image
