@@ -33,13 +33,27 @@ export default function Profile() {
   const [userData, setUserData] = useState({});
   const [checked, setChecked] = useState({});
 
+  // %%%%%%%%%%%% Dan's edits - trying to fix checkbox %%%%%%%%%%%%%
+  const handleChange = (e) => {
+    // to find out if it's checked or not; returns true or false
+  const checked = e.target.checked;
+    // to get the checked value
+  const checkedValue = e.target.value;
+    // to get the checked name
+  const checkedName = e.target.name;
+    //then you can do with the value all you want to do with it.
+  };
+
+// %%%%%%%%%%%%%%% end of Dan's edit %%%%%%%%%%%%
+
+
   function toggle(index) {
     const newData = [...userData];
     newData.splice(index, 1, {
       label: data[index].label,
       checked: !data[index].checked
     });
-    setData(newData);
+    // setData(newData);
     onChange(newData.filter(x => x.checked));
   };
   
@@ -131,7 +145,7 @@ export default function Profile() {
                   className="btn-check"
                   id="btn-check-outlined"
                   autoComplete="off"
-                  onChange={toggle}
+                  onChange={handleChange}
                 />
                 <label id="label" className="btn btn-outline-primary" htmlFor="btn-check-outlined"
                   >Add</label>
@@ -146,3 +160,4 @@ export default function Profile() {
     </div>
   )
 }
+

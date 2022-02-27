@@ -18,7 +18,7 @@
         "name": "Rick and Morty",
         "description": "Rick and Morty is an American adult animated science fiction sitcom created by Justin Roiland and Dan Harmon for Cartoon Network's nighttime programming block, Adult Swim. The series follows the misadventures of cynical mad scientist Rick Sanchez and his good-hearted, but fretful grandson Morty Smith, who split their time between domestic life and interdimensional adventures.",
         "image": "./images/fandoms/004_rickandmorty.png"
-    }
+    },
     {
         "name": "Doctor Who",
         "description": "Doctor Who is a long-running British television series with a cult following — gained more momentum when it briefly introduced a new Doctor at the end of its 2013 season. The science fiction series is quickly increasing its equally fervent fan base in the United States",
@@ -38,7 +38,7 @@
         "name": "The Office",
         "description": "The Office is an American mockumentary sitcom television series that depicts the everyday work lives of office employees in the Scranton, Pennsylvania branch of the fictional Dunder Mifflin Paper Company. It aired on NBC from March 24, 2005, to May 16, 2013, spanning a total of nine seasons.",
         "image": "./images/fandoms/008_theoffice.png"
-    }
+    },
     {
         "name": "Harry Potter",
         "description": "Harry Potter is a series of seven fantasy novels written by British author J. K. Rowling. The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry.",
