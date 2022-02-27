@@ -33,15 +33,15 @@ export default function Profile() {
   const [userData, setUserData] = useState({});
   const [checked, setChecked] = useState({});
 
-  function toggle(index) {
-    const newData = [...userData];
-    newData.splice(index, 1, {
-      label: data[index].label,
-      checked: !data[index].checked
-    });
-    setData(newData);
-    onChange(newData.filter(x => x.checked));
-  };
+  // function toggle(index) {
+  //   const newData = [...userData];
+  //   newData.splice(index, 1, {
+  //     label: data[index].label,
+  //     checked: !data[index].checked
+  //   });
+  //   setData(newData);
+  //   onChange(newData.filter(x => x.checked));
+  // };
   
 
   const userDataLength = Object.keys(userData).length;
@@ -131,7 +131,7 @@ export default function Profile() {
                   className="btn-check"
                   id="btn-check-outlined"
                   autoComplete="off"
-                  onChange={toggle}
+                  // onChange={toggle}
                 />
                 <label id="label" className="btn btn-outline-primary" htmlFor="btn-check-outlined"
                   >Add</label>
