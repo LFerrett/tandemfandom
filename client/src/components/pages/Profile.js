@@ -67,64 +67,69 @@ export default function Profile() {
       <div>
         <h1>Profile Page</h1>
         <p>Profile Page goes here</p>
-  
-          <SimpleFileUpload
-            apiKey="a576e70cb4dce38730545ffcbe16a477"
-            onSuccess={handleFile}
-          />
-        </div>
-        <div className='upload-wrapper'>
-          <div className="img-landing">
+      
+        <SimpleFileUpload
+          apiKey="a576e70cb4dce38730545ffcbe16a477"
+          onSuccess={handleFile}
+        />
+
+      </div>
+      <div className='upload-wrapper'>
+        <div className="img-landing">
           <ul className="image-grid">
             {uploadedImages.length ? (
-              uploadedImages.map((image) => (
+              uploadedImages.map((image, index) => (index === 0 &&
                 <li>
                   <img className="img-fluid profile-img" src={image} alt="profile images" />
                 </li>
               ))
             ) : (
-              <p>Uploaded images will appear here</p>
+              <p></p>
             )}
           </ul>
         </div>
       </div>
-      <div>
+      <div className="container">
         <h1>{`${profile.name}'s`} Profile Page</h1>
-        <form action="">
-          {fandoms.map((fandom, index) => {
-            return (
-              <div className="card" style={{ width: `18rem` }} key={fandom._id}>
-                <img
-                  className="card-img-top"
-                  src={`${fandom.image}`}
-                  alt="fandom logo"
-                />
-                <div className="card-body">
-                  <h5 className="card-title text-center">{fandom.name}</h5>
-                  <p className="card-text">{fandom.description}</p>
-                  <div className="text-center">
-                    <input
-                      type="checkbox"
-                      value={`${fandom._id}`}
-                      className="btn-check"
-                      id="btn-check-outlined"
-                      autoComplete="off"
-                    // onChange={toggle}
+        <div className="container">
+          <form action="">
+            <div className="row">
+              {fandoms.map((fandom, index) => {
+                return (
+                  <div className="card col-lg-4 col-md-6 col-sm-12" style={{ width: `18rem` }} key={fandom._id}>
+                    <img
+                      className="card-img-top"
+                      src={`${fandom.image}`}
+                      alt="fandom logo"
                     />
-                    <label
-                      id="label"
-                      className="btn btn-outline-primary"
-                      htmlFor="btn-check-outlined"
-                    >
-                      Add
-                    </label>
-                    <br></br>
+                    <div className="card-body">
+                      <h5 className="card-title text-center">{fandom.name}</h5>
+                      <p className="card-text">{fandom.description}</p>
+                      <div className="text-center">
+                        <input
+                          type="checkbox"
+                          value={`${fandom._id}`}
+                          className="btn-check"
+                          id="btn-check-outlined"
+                          autoComplete="off"
+                        // onChange={toggle}
+                        />
+                        <label
+                          id="label"
+                          className="btn btn-outline-primary"
+                          htmlFor="btn-check-outlined"
+                        >
+                          Add
+                        </label>
+                        <br></br>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
-        </form>
+                );
+              })}
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
