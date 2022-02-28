@@ -26,6 +26,7 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 
 export default function Landing() {
   return (
+    <>
       <header id='header'>
         <div className='intro'>
           <div className='overlay'>
@@ -52,6 +53,16 @@ export default function Landing() {
           </div>
         </div>
       </header>
+          <div id='features' className='text-center'>
+          <div className='container'>
+            <div className='col-md-10 col-md-offset-1 section-title'>
+              <h2>Features</h2>
+            </div>
+            <div className='row'>
+            </div>
+          </div>
+        </div>
+        </>
     )
 >>>>>>> dd66cc7395e183279ca5ec71af94e735d357b76d
 }
