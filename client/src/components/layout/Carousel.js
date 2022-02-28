@@ -1,4 +1,4 @@
-import { Carousel } from 'bootstrap';
+import { Carousel } from 'react-bootstrap';
 import React from 'react';
 import '../assets/Carousel.css';
 
@@ -11,8 +11,8 @@ function CarouselComponent() {
             src={require("./../images/Slider1.png")}
             alt="First slide" />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Convention Retention</h3>
+            <p>Meet your matches at local conventions</p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -22,8 +22,8 @@ function CarouselComponent() {
             src={require("./../images/Slider2.png")}
             alt="Second slide" />
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>LLLCoolJ</h3>
+            <p>Larping Ladies Love Cool Jedi</p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -33,8 +33,8 @@ function CarouselComponent() {
             src={require("./../images/Slider3.png")}
             alt="Third slide" />
           <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <h3>Stormtrooper Bloopers</h3>
+            <p>"I hit him", said no Stormtrooper ever</p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -44,8 +44,8 @@ function CarouselComponent() {
             src={require("./../images/Slider4.png")}
             alt="Fourth slide" />
           <Carousel.Caption>
-            <h3>Fourth slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <h3>Maintain a safe distance</h3>
+            <p>Socially distant swordfighting</p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -55,8 +55,8 @@ function CarouselComponent() {
             src={require("./../images/Slider5.png")}
             alt="Fifth slide" />
           <Carousel.Caption>
-            <h3>Fifth slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <h3>Difference between war and peace</h3>
+            <p>The couple that fights together, stays together</p>
           </Carousel.Caption>
         </Carousel.Item>
 
