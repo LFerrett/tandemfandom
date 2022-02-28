@@ -2,6 +2,7 @@ import React from "react";
 import "./../assets/Landing.css";
 import SmoothScroll from "smooth-scroll";
 import logo from '../images/TFLogo_white.svg';
+import CarouselComponent from "../layout/Carousel";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -10,6 +11,7 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 
 export default function Landing() {
   return (
+    <>
       <header id='header'>
         <div className='intro'>
           <div className='overlay'>
@@ -36,5 +38,16 @@ export default function Landing() {
           </div>
         </div>
       </header>
+          <div id='features' className='text-center'>
+          <div className='container'>
+            <div className='col-md-10 col-md-offset-1 section-title'>
+              <h2>Features</h2>
+              <CarouselComponent />
+            </div>
+            <div className='row'>
+            </div>
+          </div>
+        </div>
+        </>
     )
 }
