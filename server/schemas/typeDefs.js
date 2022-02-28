@@ -8,6 +8,7 @@ const typeDefs = gql`
     password: String!
     firstName: String!
     lastName: String!
+    image: String
     fandoms: [Fandom]
     matches: [User]
   }

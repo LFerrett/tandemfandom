@@ -42,7 +42,6 @@ export default function Landing() {
           <div className='container'>
             <div className='col-md-10 col-md-offset-1 section-title'>
               <h2>Features</h2>
-              <CarouselComponent />
             </div>
             <div className='row'>
             </div>
