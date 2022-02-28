@@ -1,7 +1,6 @@
 import React from "react";
 import "./../assets/Landing.css";
 import SmoothScroll from "smooth-scroll";
-import logo from '../images/TFLogo_white.svg';
 import Carousel from "./../layout/Carousel";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {

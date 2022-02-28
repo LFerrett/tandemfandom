@@ -2,7 +2,7 @@
   background-color: #627e8d; 
 }
 
-.navbar-link :hover {
+.navbar-brand:hover {
   color: white;
 }
 
