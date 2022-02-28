@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
+import logo from '../images/TFLogo.svg';
 
 import Auth from '../../utils/auth';
 
@@ -40,6 +41,12 @@ const Login = (props) => {
   };
 
   return (
+    <>
+       <div class="text-center">
+    <img src={logo} width="300" alt="Tandem Fandom" />
+</div>
+    
+     <hr></hr>
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
@@ -86,6 +93,7 @@ const Login = (props) => {
         </div>
       </div>
     </main>
+    </>
   );
 };
 

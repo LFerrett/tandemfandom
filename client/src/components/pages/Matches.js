@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
-import Auth from "../../utils/auth";
 import MatchesList from "../MatchesList";
 
 import { GET_USERS } from "../../utils/queries";

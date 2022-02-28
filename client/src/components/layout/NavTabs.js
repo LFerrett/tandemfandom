@@ -39,28 +39,27 @@ function NavTabs() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="navbar-brand" to="/yourmatches">
-                  Connections
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="navbar-brand" to="/">
+                <Link className="navbar-brand nav-link" onClick={auth.logout()} to="/">
                   Logout
                 </Link>
               </li>
             </>
           )}
-          <li className="nav-item">
-            <Link className="navbar-brand" to="/Login">
-              Login
-            </Link>
-          </li>
+          {!auth.loggedIn() && (
+            <>
+              <li className="nav-item">
+                <Link className="navbar-brand" to="/Login">
+                  Login
+                </Link>
+              </li>
 
-          <li className="nav-item">
-            <Link className="navbar-brand" to="/Signup">
-              Signup
-            </Link>
-          </li>
+              <li className="nav-item">
+                <Link className="navbar-brand" to="/Signup">
+                  Signup
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </nav>

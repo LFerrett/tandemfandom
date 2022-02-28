@@ -9,6 +9,7 @@ const resolvers = {
         const userFound = await User.findOne({ _id: context.user._id }).select("-__v -password").populate('matches').populate('fandoms');
         console.log(userFound)
         console.log(context.user)
+        
         return userFound
       }
       throw new AuthenticationError('You need to be logged in!');
