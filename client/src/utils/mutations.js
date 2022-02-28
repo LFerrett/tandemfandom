@@ -13,7 +13,7 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-    mutation addUser($username: String!, $email: String!,       $password: String!, $firstName: String!, $lastName: String!) {
+    mutation addUser($username: String!, $email: String!, $password: String!, $firstName: String!, $lastName: String!) {
         addUser(username: $username, email: $email, password: $password, firstName: $firstName, lastName: $lastName) {
             token
             user {
@@ -51,8 +51,8 @@ export const REMOVE_FANDOM = gql`
 `;
 
 export const ADD_MATCH = gql`
-    mutation addMatch($_id: ID!, $userId: ID! ) {
-        addMatch(_id: $_id, userId: $userId) {
+    mutation addMatch( $_id: ID! ) {
+        addMatch( _id: $_id) {
             _id
             username
             firstName
@@ -62,6 +62,11 @@ export const ADD_MATCH = gql`
                 username
                 firstName
                 lastName
+            }
+            fandoms {
+                _id
+                name
+                description
             }
         }
     }

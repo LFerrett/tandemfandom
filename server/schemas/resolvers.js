@@ -6,7 +6,10 @@ const resolvers = {
   Query: {
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id });
+        const userFound = await User.findOne({ _id: context.user._id }).select("-__v -password").populate('matches').populate('fandoms');
+        console.log(userFound)
+        console.log(context.user)
+        return userFound
       }
       throw new AuthenticationError('You need to be logged in!');
     },
@@ -79,12 +82,13 @@ const resolvers = {
     },
 
     addMatch: async (parent, args, context) => {
+      console.log(args)
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
               { _id: context.user._id },
-              { $addToSet: { matches: { _id: args.userId } } },
+              { $addToSet: { matches: { _id: args._id } } },
               { new: true, runValidators: true }
-          ).populate('matches');
+          ).populate('matches').populate('fandoms');
           return updatedUser ; 
       }
         

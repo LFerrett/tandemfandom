@@ -52,7 +52,7 @@ const Login = (props) => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input"
+                  className="form-input m-2"
                   placeholder="Your email"
                   name="email"
                   type="email"
@@ -60,15 +60,15 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input"
-                  placeholder="******"
+                  className="form-input m-2"
+                  placeholder="Password"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-info"
+                  className="btn btn-block btn-info m-2"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
