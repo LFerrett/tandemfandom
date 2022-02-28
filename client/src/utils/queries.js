@@ -31,6 +31,7 @@ export const GET_USERS = gql`
             username
             firstName
             lastName
+            image
             fandoms {
                 _id
                 description
