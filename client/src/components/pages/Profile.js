@@ -18,6 +18,7 @@ export default function Profile() {
     setUploadedImages([...uploadedImages, url])
     console.log('The URL of the file is ' + url)
   }
+  
   // Jose's edits
   const { load, pdata } = useQuery(GET_ME);
   const profile = pdata?.me || {};
@@ -38,10 +39,10 @@ export default function Profile() {
   //   onChange(newData.filter(x => x.checked));
   // };
 
-  handleInputChange({ target }) ;{
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    this.setState({ [target.name]: value });
-}
+//   handleInputChange({ target }) ;{
+//     const value = target.type === 'checkbox' ? target.checked : target.value;
+//     this.setState({ [target.name]: value });
+// }
 
   const userDataLength = Object.keys(userData).length;
 

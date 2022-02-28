@@ -5,8 +5,16 @@ export const GET_ME = gql`
         me {
             _id
             username
+            email
             firstName
             lastName
+            matches {
+                _id
+                username
+                email
+                firstName
+                lastName
+            }
             fandoms {
                 _id
                 description
