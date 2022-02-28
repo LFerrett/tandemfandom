@@ -39,6 +39,11 @@ function NavTabs() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="navbar-brand" to="/yourmatches">
+                  Connections
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="navbar-brand" to="/">
                   Logout
                 </Link>
