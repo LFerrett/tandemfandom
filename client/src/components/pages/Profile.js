@@ -100,7 +100,7 @@ export default function Profile() {
                     <img
                       className="card-img-top"
                       src={`${fandom.image}`}
-                      alt="fandom logo"
+                      alt={`${fandom.name} logo`}
                     />
                     <div className="card-body">
                       <h5 className="card-title text-center">{fandom.name}</h5>
