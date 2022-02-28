@@ -18,9 +18,7 @@ export default function Landing() {
             <div className='container'>
               <div className='row'>
                 <div className='col-md-12 intro-text'>
-                <img src={logo} alt="Tandem Fandom" width="30%"/>
-                  <p>Find your people! Tandem Fandom is THE people finding app for the Who's Whovian of your favorite fandoms!</p>
-                  <a
+                 <a
                     href='/Signup'
                     className='btn btn-custom btn-lg'
                   >
@@ -32,6 +30,7 @@ export default function Landing() {
                   >
                     Login
                   </a>{' '}
+                  <p>Tandem Fandom is THE people finding app for the Who's Whovian of your favorite fandoms!</p>
                 </div>
               </div>
             </div>

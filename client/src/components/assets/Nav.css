@@ -2,7 +2,7 @@
   background-color: #627e8d; 
 }
 
-.navbar a:hover {
+.navbar-link :hover {
   color: white;
 }
 
