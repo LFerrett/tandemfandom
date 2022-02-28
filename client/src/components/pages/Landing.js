@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import CarouselComponent from '../layout/Carousel';
-
-export default function Landing() {
-  return (
-    <div>
-      <h1>Landing</h1>
-      <p>
-        <CarouselComponent />
-      </p>
-      <p>LOGIN</p>
-      <p>SIGNUP</p>
-    </div>
-  );
-=======
 import React from "react";
 import "./../assets/Landing.css";
 import SmoothScroll from "smooth-scroll";
@@ -64,5 +48,4 @@ export default function Landing() {
         </div>
         </>
     )
->>>>>>> dd66cc7395e183279ca5ec71af94e735d357b76d
 }
