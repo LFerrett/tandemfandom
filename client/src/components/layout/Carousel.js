@@ -1,6 +1,6 @@
 import { Carousel } from 'bootstrap';
 import React from 'react';
-import '../assets/css/Carousel.css';
+import '../assets/Carousel.css';
 
 function CarouselComponent() {
     return (
@@ -8,7 +8,7 @@ function CarouselComponent() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={require("./../images/Slider1.jpg")}
+            src={require("./../images/Slider1.png")}
             alt="First slide" />
           <Carousel.Caption>
             <h3>First slide label</h3>
@@ -19,7 +19,7 @@ function CarouselComponent() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={require("./../images/Slider2.jpg")}
+            src={require("./../images/Slider2.png")}
             alt="Second slide" />
           <Carousel.Caption>
             <h3>Second slide label</h3>
@@ -30,7 +30,7 @@ function CarouselComponent() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={require("./../images/Slider3.jpg")}
+            src={require("./../images/Slider3.png")}
             alt="Third slide" />
           <Carousel.Caption>
             <h3>Third slide label</h3>
@@ -41,7 +41,7 @@ function CarouselComponent() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={require("./../images/Slider4.jpg")}
+            src={require("./../images/Slider4.png")}
             alt="Fourth slide" />
           <Carousel.Caption>
             <h3>Fourth slide label</h3>
@@ -52,7 +52,7 @@ function CarouselComponent() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={require("./../images/Slider5.jpeg")}
+            src={require("./../images/Slider5.png")}
             alt="Fifth slide" />
           <Carousel.Caption>
             <h3>Fifth slide label</h3>
