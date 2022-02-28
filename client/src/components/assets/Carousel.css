@@ -1,13 +1,16 @@
 h3 {
 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 color: rgb(252, 251, 249);
-font-size: xx-large;
+font-size: 3em;
 text-shadow: 10px;
+-webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: #10283e;
 }
 
 p {
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(250, 249, 248);
+    color: white;
     font-size: large;
     text-shadow: 10px;
+    font-weight: 900;
 }

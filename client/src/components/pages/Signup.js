@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation} from '@apollo/client';
+import logo from '../images/TFLogo.svg';
 
 import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations';
@@ -52,6 +53,11 @@ const Signup = () => {
 
   return (
     <>
+    <div class="text-center">
+    <img src={logo} width="300" alt="Tandem Fandom" />
+</div>
+    
+     <hr></hr>
       {/* This is needed for the validation functionality above */}
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         {/* show alert if server response is bad */}

@@ -17,6 +17,6 @@ code {
 }
 
 .container {
-  padding: 55px 55px;
+  padding: 20px 55px;
   min-height: calc(100vh - 130px)
 }
