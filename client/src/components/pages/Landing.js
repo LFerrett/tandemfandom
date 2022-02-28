@@ -1,7 +1,6 @@
 import React from "react";
 import "./../assets/Landing.css";
 import SmoothScroll from "smooth-scroll";
-import logo from '../images/TFLogo_white.svg';
 import Carousel from "./../layout/Carousel";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -18,9 +17,7 @@ export default function Landing() {
             <div className='container'>
               <div className='row'>
                 <div className='col-md-12 intro-text'>
-                <img src={logo} alt="Tandem Fandom" width="50%"/>
-                  <p>Find your people! Tandem Fandom is THE people finding app for the Who's Whovian of your favorite fandoms!</p>
-                  <a
+                 <a
                     href='/Signup'
                     className='btn btn-custom btn-lg'
                   >
@@ -32,6 +29,7 @@ export default function Landing() {
                   >
                     Login
                   </a>{' '}
+                  <p>Tandem Fandom is THE people finding app for the Who's Whovian of your favorite fandoms!</p>
                 </div>
               </div>
             </div>
