@@ -4,8 +4,8 @@ import '../assets/Carousel.css';
 
 function CarouselComponent() {
     return (
-  <><Carousel fade>
-        <Carousel.Item>
+  <><Carousel fade controls={false}>
+        <Carousel.Item interval={2000}>
           <img
             className="d-block w-100"
             src={require("./../images/Slider1.png")}
@@ -16,7 +16,7 @@ function CarouselComponent() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item interval={2000}>
           <img
             className="d-block w-100"
             src={require("./../images/Slider2.png")}
@@ -27,7 +27,7 @@ function CarouselComponent() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item interval={2000}>
           <img
             className="d-block w-100"
             src={require("./../images/Slider3.png")}
@@ -38,7 +38,7 @@ function CarouselComponent() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item interval={2000}>
           <img
             className="d-block w-100"
             src={require("./../images/Slider4.png")}
@@ -49,7 +49,7 @@ function CarouselComponent() {
           </Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item interval={2000}>
           <img
             className="d-block w-100"
             src={require("./../images/Slider5.png")}
