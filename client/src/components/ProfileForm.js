@@ -41,26 +41,26 @@ export default function ProfileForm({ me, fandoms }) {
       console.log(data);
 
       setSelectedFandoms([...data.fandoms]);
-
+      window.location.reload();
       Auth.login(data.users.token);
     } catch (err) {
       console.error(JSON.parse(JSON.stringify(err)));
     }
   };
 
-  const loadFilteredFandoms = () => {
-    let filteredFandom = [];
-    let oneFilter
-    for (let i = 0; i < userFandoms.length; i++) {
-      const oneFandom = userFandoms[i];
-      console.log(oneFandom._id)
-      oneFilter = fandoms.filter((banana) => banana._id !== oneFandom._id);
-      filteredFandom.concat(oneFilter)
-    }
-    console.log({filteredFandom})
+  // const loadFilteredFandoms = () => {
+  //   let filteredFandom = [];
+  //   let oneFilter
+  //   for (let i = 0; i < userFandoms.length; i++) {
+  //     const oneFandom = userFandoms[i];
+  //     console.log(oneFandom._id)
+  //     oneFilter = fandoms.filter((banana) => banana._id !== oneFandom._id);
+  //     filteredFandom.concat(oneFilter)
+  //   }
+  //   console.log({filteredFandom})
 
-    setFilteredFandoms([...filteredFandom]);
-  };
+  //   setFilteredFandoms([...filteredFandom]);
+  // };
 
   const handleAddSubmit = async (event) => {
     event.preventDefault();
@@ -82,6 +82,7 @@ export default function ProfileForm({ me, fandoms }) {
       });
       console.log(data);
 
+      window.location.reload();
       Auth.login(data.users.token);
     } catch (err) {
       console.error(JSON.parse(JSON.stringify(err)));
@@ -89,7 +90,27 @@ export default function ProfileForm({ me, fandoms }) {
   };
 
   useEffect(() => {
-    loadFilteredFandoms();
+    // loadFilteredFandoms();
+    // setFilteredFandoms(fandoms);
+    let tempFilter;
+    let tempArray = userFandoms.map((remainingFandom, index) => {
+      if (index === 0) {
+        tempFilter = fandoms.filter(
+          (fandom) => fandom._id !== remainingFandom._id
+        );
+        console.log({ tempFilter });
+      } else {
+        tempFilter = tempFilter.filter(
+          (fandom) => fandom._id !== remainingFandom._id
+        );
+        console.log({ tempFilter });
+        setFilteredFandoms(tempFilter);
+      }
+    });
+    // tempArray = tempArray.flat();
+    // console.log(tempArray);
+    console.log(tempFilter);
+    // setFilteredFandoms(fandoms.filter(remainingFandom => remainingFandom._id !== userFandoms.map(fandom => fandom._id)))
   }, []);
 
   if (!Auth.loggedIn()) {
@@ -128,6 +149,9 @@ export default function ProfileForm({ me, fandoms }) {
               </div>
             );
           })}
+        </div>
+        <div>
+          <h1>Hey</h1>
         </div>
         <form onSubmit={handleAddSubmit}>
           <div className="row">
