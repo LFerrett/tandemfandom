@@ -11,32 +11,41 @@ export default function ProfileForm({ me, fandoms }) {
   const [removeFandom] = useMutation(REMOVE_FANDOM);
 
   const [userFandoms, setUserFandoms] = useState(me.fandoms);
-  const [allFandoms, setFandoms] = useState();
- 
-//   const handleToggle = ({ target }) =>
-//   setUserFandoms(s => ({ ...s, [target.name]: !s[target.name] }));
-  
-    const handleToggle = changeEvent => {
-        const { name } = changeEvent.target;
-    
-        this.setUserFandoms(prevState => ({
-        fandoms: {
-            ...prevState.fandoms,
-            [name]: !prevState.fandoms[name]
-        }
-        }));
-    }
+  // const [selectedFandoms, setSelectedFandoms] = useState([]);
 
-    const isSelected = (fandomId) => {
-        if (userFandoms.includes(fandomId)) {
-            return "false"
-        } else {
-            return "true"
-        }
-    }
+  //   const handleToggle = ({ target }) =>
+  //   setUserFandoms(s => ({ ...s, [target.name]: !s[target.name] }));
+
+  const handleToggle = (e) => {
+    const { value } = e.currentTarget;
+
+    let fandomArray;
+    // If the existing array includes the ID of the song clicked on, remove it
+    // Otherwise, add it to the array
+    userFandoms.includes(value)
+      ? (fandomArray = userFandoms.filter((fandom) => fandom !== value))
+      : (fandomArray = [...userFandoms, value]);
+    // Set the array of song IDs in state
+    setUserFandoms(fandomArray);
+
+    // this.setUserFandoms(prevState => ({
+    // fandoms: {
+    //     ...prevState.fandoms,
+    //     [name]: !prevState.fandoms[name]
+    // }
+    // }));
+  };
+
+  // const isSelected = (fandomId) => {
+  //     if (userFandoms.includes(fandomId)) {
+  //         return "false"
+  //     } else {
+  //         return "true"
+  //     }
+  // }
 
   const handleAddSubmit = async (event) => {
-      event.preventDefault();
+    event.preventDefault();
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -46,10 +55,9 @@ export default function ProfileForm({ me, fandoms }) {
 
     try {
       const { data } = await addFandom({
-        variables: { _id: event.key },
+        variables: { fandomsArray: [...userFandoms] },
       });
-
-      setUserFandoms(...userFandoms);
+      console.log(data)
 
       Auth.login(data.users.token);
     } catch (err) {
@@ -58,8 +66,8 @@ export default function ProfileForm({ me, fandoms }) {
   };
 
   if (!Auth.loggedIn()) {
-    return <Redirect to="/login" />
-  };
+    return <Redirect to="/login" />;
+  }
 
   return (
     <div>
@@ -84,15 +92,16 @@ export default function ProfileForm({ me, fandoms }) {
                     <div className="text-center">
                       <input
                         key={fandom._id}
+                        value={fandom._id}
                         type="checkbox"
                         onChange={handleToggle}
                         className="btn-check"
-                        // checked={() => isSelected(fandom._id)}
+                        checked={userFandoms.includes(fandom._id)}
                         id="btn-check-outlined"
                         autoComplete="off"
                       />
-                      {/* <input
-                            type="checkbox"
+                      {/* <button
+                            // type="checkbox"
                             className="btn-check"
                             id="btn-check-outlined"
                             autoComplete="off"
@@ -106,7 +115,7 @@ export default function ProfileForm({ me, fandoms }) {
               );
             })}
           </div>
-          <button type="submit">Submit</button>
+          <button className="btn-success" type="submit">Submit</button>
         </form>
       </div>
     </div>
