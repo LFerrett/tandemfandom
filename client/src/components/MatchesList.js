@@ -60,10 +60,10 @@ export default function MatchesList({ users, me }) {
   };
 
   useEffect(() => {
-    loadMatches();
+    loadUnMatches();
   }, []);
   
-  function loadMatches() {
+  function loadUnMatches() {
     const notMeUsers = users.filter((user) => user._id !== me._id);
     // console.log(notMeUsers);
 
@@ -90,7 +90,7 @@ export default function MatchesList({ users, me }) {
 
   return (
     <div>
-      <h1>Matches</h1>
+      <h1>Your Matches</h1>
       <div className="row">
         {matches.map((user, index) => {
           return (
@@ -128,7 +128,7 @@ export default function MatchesList({ users, me }) {
           );
         })}
       </div>
-      <h1>UnMatches</h1>
+      <h1>Potential Matches</h1>
       <div className="row">
         {unMatches.map((user, index) => {
           return (
