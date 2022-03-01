@@ -1,17 +1,19 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 
 import { ADD_MATCH } from "../utils/mutations";
+import { REMOVE_MATCH } from "../utils/mutations";
 
 export default function MatchesList({ users, me }) {
-  console.log({ users }, { me });
+  // console.log({ users }, { me });
   const [unMatches, setUnMatches] = useState([]);
   const [matches, setMatches] = useState(me.matches);
   // const [matches, setMatches] = useState(me.matches);
 
-  const [addMatch, { error }] = useMutation(ADD_MATCH);
+  const [addMatch] = useMutation(ADD_MATCH);
+  const [removeMatch] = useMutation(REMOVE_MATCH);
 
   const handleClick = async (matchId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -28,6 +30,30 @@ export default function MatchesList({ users, me }) {
       setUnMatches([...unMatches.filter((match) => match._id !== matchId)]);
 
       Auth.login(data.users.token);
+
+      window.location.reload();
+    } catch (err) {
+      console.error(JSON.parse(JSON.stringify(err)));
+    }
+  };
+
+  const handleRemoveClick = async (matchId) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const { data } = await removeMatch({
+        variables: { _id: matchId },
+      });
+
+      setMatches([...matches.filter((match) => match._id !== matchId)]);
+
+      Auth.login(data.users.token);
+      
+      window.location.reload();
     } catch (err) {
       console.error(JSON.parse(JSON.stringify(err)));
     }
@@ -36,36 +62,27 @@ export default function MatchesList({ users, me }) {
   useEffect(() => {
     loadMatches();
   }, []);
-  // const unmatchedUsers = users.filter(user => me.matches.map((match, index) => user._id !== match._id ))
-  // console.log(unmatchedUsers)
+  
   function loadMatches() {
     const notMeUsers = users.filter((user) => user._id !== me._id);
-    console.log(notMeUsers);
+    // console.log(notMeUsers);
+
     const meMatches = me.matches.map((match) => match._id);
-    console.log(meMatches);
-    // let unmatchedUsers;
+    // console.log(meMatches);
+
     const unmatchedUsers = notMeUsers.filter((user, index) => {
-      console.log(meMatches[index]);
+      // console.log(meMatches[index]);
       if (meMatches[index] === undefined) {
         return true;
       } else {
         return false;
       }
 
-      // const banana = me.matches.map((match) => {
-      //   console.log(index);
-      // });
-      // console.log(banana);
+      
     });
     setUnMatches(unmatchedUsers);
   }
-  // for (let index = 0; index < meMatches.length; index++) {
-  //   const matchId = meMatches[index];
-  //   if (matchId) {
-
-  //   }
-  // }
-  // console.log(unmatchedUsers);
+  
 
   if (!Auth.loggedIn()) {
     return <Redirect to="/login" />
@@ -89,20 +106,20 @@ export default function MatchesList({ users, me }) {
                     {user.firstName} {user.lastName}
                   </h5>
                   <h6 className="card-text">Fandoms:</h6>
-                  {/* {user.matches.fandoms.map((fandom) => {
+                  {user.fandoms.map((fandom) => {
                     return (
                       <p className="card-text" key={fandom._id}>
                         {fandom.name}
                       </p>
                     );
-                  })} */}
+                  })}
                   <div className="text-center">
                     <button
-                      className="btn-block btn-success"
+                      className="btn-block btn-danger"
                       type="button"
-                      onClick={() => handleClick(user._id)}
+                      onClick={() => handleRemoveClick(user._id)}
                     >
-                      Add Match
+                      Remove Match
                     </button>
                   </div>
                 </div>

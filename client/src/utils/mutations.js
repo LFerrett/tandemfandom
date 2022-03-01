@@ -72,8 +72,8 @@ export const ADD_MATCH = gql`
     }
 `;
 export const REMOVE_MATCH = gql`
-    mutation removeMatch($_id: ID!, $userId: ID! ) {
-        removeMatch(_id: $_id, userId: $userId) {
+    mutation removeMatch($_id: ID!) {
+        removeMatch(_id: $_id) {
             _id
             username
             firstName
@@ -84,6 +84,12 @@ export const REMOVE_MATCH = gql`
                 firstName
                 lastName
             }
+            fandoms {
+                _id
+                name
+                description
+            }
+            
         }
     }
 `;

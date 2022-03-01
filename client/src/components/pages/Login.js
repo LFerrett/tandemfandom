@@ -42,9 +42,9 @@ const Login = (props) => {
 
   return (
     <>
-       <div class="text-center">
-    <img src={logo} width="300" alt="Tandem Fandom" />
-</div>
+      <div class="text-center">
+        <img src={logo} width="300" alt="Tandem Fandom" />
+      </div>
     
      <hr></hr>
     <main className="flex-row justify-center mb-4">

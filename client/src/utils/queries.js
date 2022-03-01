@@ -14,6 +14,12 @@ export const GET_ME = gql`
                 email
                 firstName
                 lastName
+                image
+                fandoms {
+                    _id
+                    description
+                    name
+                }
             }
             fandoms {
                 _id
