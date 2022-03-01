@@ -2,7 +2,9 @@
 
 ## Description
 
-XXXX
+A fully functioning user friendly web application designed for those seeking to match users with similar interests by their specific fandom. Users can use application to find love, friendship, network, etc. in a safe and responsive environment.
+
+TandomFandom is MERN stack app, was made combining a Node.js/Express.js server with a React front-end. The back-end also includes MongoDB with GraphQL. Furthermore, JWT was used to implement authentication for all users.
 
 ## Table of Contents
 
@@ -14,13 +16,12 @@ XXXX
   - [User Story](#user-story)
   - [Usage](#usage)
   - [Credits](#credits)
-    - [Resources](#resources)
   - [License](#license)
   - [Questions](#questions)
 
 ## Deployment
 
-TandemFandem is deployed on Heroku at: XXXXX
+TandemFandem is deployed on Heroku at: https://tandemfandom.herokuapp.com/
 
 ## Installation
 
@@ -41,9 +42,6 @@ SO THAT I can talk to and meet other people with the same interests
 ## Credits
 
 Coding was completed by Jose Dominguez, Katelynn Donahue, Lauren Ferrett, and Daniel Westiner.
-
-### Resources
-TBD
 
 ## License
 

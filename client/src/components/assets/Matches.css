@@ -1,0 +1,18 @@
+.btn-addmatch {
+    background-color: #10283e;
+    color: white;
+    
+}
+.btn-addmatch:hover {
+    background-color: #C3CCA2;
+    color: #10283E;
+    
+}
+.btn-removematch {
+    background-color: #10283e;
+    color: white;
+}
+.btn-removematch:hover {
+    background-color: #C3CCA2;
+    color: #10283E;
+}

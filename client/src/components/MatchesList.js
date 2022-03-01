@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
+import "./assets/Matches.css";
 
 import { ADD_MATCH } from "../utils/mutations";
 
