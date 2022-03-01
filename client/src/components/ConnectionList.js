@@ -65,7 +65,7 @@ export default function ConnectionList({ users, me }) {
                     })}
                     <div className="text-center">
                       <button
-                        className="btn-block btn-danger"
+                        className="btn-block btn-removematch"
                         type="button"
                         onClick={() => handleRemoveClick(user._id)}
                       >
