@@ -26,8 +26,8 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_FANDOM = gql`
-    mutation addFandom($_id: ID!, $fandomId: ID! ) {
-        addFandom(_id: $_id, fandomId: $fandomId) {
+    mutation addFandom($_id: ID!) {
+        addFandom(_id: $_id) {
             username
             fandoms {
                 _id

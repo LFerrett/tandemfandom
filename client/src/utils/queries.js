@@ -8,6 +8,7 @@ export const GET_ME = gql`
             email
             firstName
             lastName
+            image
             matches {
                 _id
                 username
