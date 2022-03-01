@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 
 import { ADD_MATCH } from "../utils/mutations";
+import { REMOVE_MATCH } from "../utils/mutations";
 
 export default function MatchesList({ users, me }) {
   console.log({ users }, { me });
@@ -12,6 +13,7 @@ export default function MatchesList({ users, me }) {
   // const [matches, setMatches] = useState(me.matches);
 
   const [addMatch, { error }] = useMutation(ADD_MATCH);
+  // const [removeMatch] = useMutation(REMOVE_MATCH);
 
   const handleClick = async (matchId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -33,17 +35,37 @@ export default function MatchesList({ users, me }) {
     }
   };
 
+  // const handleRemoveClick = async (matchId) => {
+  //   const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+  //   if (!token) {
+  //     return false;
+  //   }
+
+  //   try {
+  //     const { data } = await removeMatch({
+  //       variables: { _id: matchId },
+  //     });
+
+  //     setMatches([...matches.filter((match) => match._id !== matchId)]);
+
+  //     Auth.login(data.users.token);
+  //   } catch (err) {
+  //     console.error(JSON.parse(JSON.stringify(err)));
+  //   }
+  // };
+
   useEffect(() => {
     loadMatches();
   }, []);
-  // const unmatchedUsers = users.filter(user => me.matches.map((match, index) => user._id !== match._id ))
-  // console.log(unmatchedUsers)
+  
   function loadMatches() {
     const notMeUsers = users.filter((user) => user._id !== me._id);
     console.log(notMeUsers);
+
     const meMatches = me.matches.map((match) => match._id);
     console.log(meMatches);
-    // let unmatchedUsers;
+
     const unmatchedUsers = notMeUsers.filter((user, index) => {
       console.log(meMatches[index]);
       if (meMatches[index] === undefined) {
@@ -52,24 +74,15 @@ export default function MatchesList({ users, me }) {
         return false;
       }
 
-      // const banana = me.matches.map((match) => {
-      //   console.log(index);
-      // });
-      // console.log(banana);
+      
     });
     setUnMatches(unmatchedUsers);
   }
-  // for (let index = 0; index < meMatches.length; index++) {
-  //   const matchId = meMatches[index];
-  //   if (matchId) {
+  
 
-  //   }
-  // }
-  // console.log(unmatchedUsers);
-
-  if (!Auth.loggedIn()) {
-    return <Redirect to="/login" />
-  };
+  // if (!Auth.loggedIn()) {
+  //   return <Redirect to="/login" />
+  // };
 
   return (
     <div>
@@ -98,11 +111,11 @@ export default function MatchesList({ users, me }) {
                   })} */}
                   <div className="text-center">
                     <button
-                      className="btn-block btn-success"
+                      className="btn-block btn-warning"
                       type="button"
                       onClick={() => handleClick(user._id)}
                     >
-                      Add Match
+                      Remove Match
                     </button>
                   </div>
                 </div>
