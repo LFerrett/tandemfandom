@@ -24,7 +24,7 @@ export default function Profile() {
 
   const { data } = useQuery(GET_FANDOMS);
   const fandoms = data?.fandoms || [];
-
+  console.log(me)
 
   return (
     <div>

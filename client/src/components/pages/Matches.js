@@ -6,7 +6,7 @@ import { GET_USERS } from "../../utils/queries";
 import { GET_ME } from "../../utils/queries";
 
 export default function Matches() {
-  const { data } = useQuery(GET_USERS);
+  const { loading, data, refetch } = useQuery(GET_USERS);
   const users = data?.users || [];
 
   const { loading: loadingMe, data: dataMe } = useQuery(GET_ME);
@@ -18,7 +18,7 @@ export default function Matches() {
       {loadingMe ? (
         <div>Loading...</div>
       ) : (
-        <MatchesList users={users} me={me} />
+        <MatchesList users={users} me={me} refetch={refetch} />
       )}
     </div>
   );

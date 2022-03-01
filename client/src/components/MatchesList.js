@@ -6,7 +6,7 @@ import "./assets/Matches.css";
 
 import { ADD_MATCH } from "../utils/mutations";
 
-export default function MatchesList({ users, me }) {
+export default function MatchesList({ users, me, refetch }) {
   // console.log({ users }, { me });
   const [unMatches, setUnMatches] = useState([]);
 
@@ -28,7 +28,7 @@ export default function MatchesList({ users, me }) {
 
       Auth.login(data.users.token);
 
-      window.location.reload();
+      refetch()
     } catch (err) {
       console.error(JSON.parse(JSON.stringify(err)));
     }

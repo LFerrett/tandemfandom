@@ -1,33 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Redirect } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 
 import { ADD_FANDOM } from "../utils/mutations";
+import { REMOVE_FANDOM } from "../utils/mutations";
 
 export default function ProfileForm({ me, fandoms }) {
   const [addFandom] = useMutation(ADD_FANDOM);
+  const [removeFandom] = useMutation(REMOVE_FANDOM);
 
   const [userFandoms, setUserFandoms] = useState(me.fandoms);
-  //   const [checked, setChecked] = useState({});
+  const [selectedFandoms, setSelectedFandoms] = useState([]);
+  const [filteredFandoms, setFilteredFandoms] = useState([]);
 
-  // function toggle(index) {
-  //   const newData = [...userData];
-  //   newData.splice(index, 1, {
-  //     label: data[index].label,
-  //     checked: !data[index].checked
-  //   });
-  //   setData(newData);
-  //   onChange(newData.filter(x => x.checked));
-  // };
+  const handleToggle = (e) => {
+    const { value } = e.currentTarget;
 
-  //   handleInputChange({ target }) ;{
-  //     const value = target.type === 'checkbox' ? target.checked : target.value;
-  //     this.setState({ [target.name]: value });
-  // }
+    let fandomArray;
+    // If the existing array includes the ID of the song clicked on, remove it
+    // Otherwise, add it to the array
+    userFandoms.includes(value)
+      ? (fandomArray = userFandoms.filter((fandom) => fandom !== value))
+      : (fandomArray = [...userFandoms, value]);
+    // Set the array of song IDs in state
+    setUserFandoms(fandomArray);
+  };
 
-  //   const userDataLength = Object.keys(userData).length;
-
-  const handleAddSubmit = async (fandomId) => {
+  const handleClick = async (fandomId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -35,24 +35,127 @@ export default function ProfileForm({ me, fandoms }) {
     }
 
     try {
-      const { data } = await addFandom({
+      const { data } = await removeFandom({
         variables: { _id: fandomId },
       });
+      console.log(data);
 
-      setUserFandoms(...userFandoms);
-
+      setSelectedFandoms([...data.fandoms]);
+      window.location.reload();
       Auth.login(data.users.token);
     } catch (err) {
-      console.error(err);
+      console.error(JSON.parse(JSON.stringify(err)));
     }
   };
+
+  // const loadFilteredFandoms = () => {
+  //   let filteredFandom = [];
+  //   let oneFilter
+  //   for (let i = 0; i < userFandoms.length; i++) {
+  //     const oneFandom = userFandoms[i];
+  //     console.log(oneFandom._id)
+  //     oneFilter = fandoms.filter((banana) => banana._id !== oneFandom._id);
+  //     filteredFandom.concat(oneFilter)
+  //   }
+  //   console.log({filteredFandom})
+
+  //   setFilteredFandoms([...filteredFandom]);
+  // };
+
+  const handleAddSubmit = async (event) => {
+    event.preventDefault();
+
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    let fandomsToSubmit;
+    if (userFandoms.length) {
+      fandomsToSubmit = userFandoms.map((fandom) => fandom._id || fandom);
+    }
+
+    try {
+      const { data } = await addFandom({
+        variables: { fandomsArray: [...fandomsToSubmit] },
+      });
+      console.log(data);
+
+      window.location.reload();
+      Auth.login(data.users.token);
+    } catch (err) {
+      console.error(JSON.parse(JSON.stringify(err)));
+    }
+  };
+
+  useEffect(() => {
+    // loadFilteredFandoms();
+    // setFilteredFandoms(fandoms);
+    let tempFilter;
+    let tempArray = userFandoms.map((remainingFandom, index) => {
+      if (index === 0) {
+        tempFilter = fandoms.filter(
+          (fandom) => fandom._id !== remainingFandom._id
+        );
+        console.log({ tempFilter });
+      } else {
+        tempFilter = tempFilter.filter(
+          (fandom) => fandom._id !== remainingFandom._id
+        );
+        console.log({ tempFilter });
+        setFilteredFandoms(tempFilter);
+      }
+    });
+    // tempArray = tempArray.flat();
+    // console.log(tempArray);
+    console.log(tempFilter);
+    // setFilteredFandoms(fandoms.filter(remainingFandom => remainingFandom._id !== userFandoms.map(fandom => fandom._id)))
+  }, []);
+
+  if (!Auth.loggedIn()) {
+    return <Redirect to="/login" />;
+  }
 
   return (
     <div>
       <div className="container">
+        <div className="row">
+          {userFandoms.map((fandom, index) => {
+            return (
+              <div
+                className="card col-lg-4 col-md-6 col-sm-12"
+                style={{ width: `18rem` }}
+                key={fandom._id}
+              >
+                <img
+                  className="card-img-top"
+                  src={`${fandom.image}`}
+                  alt={`${fandom.name} logo`}
+                />
+                <div className="card-body">
+                  <h5 className="card-title text-center">{fandom.name}</h5>
+                  <div className="text-center">
+                    <button
+                      key={fandom._id}
+                      className="btn-block btn-danger"
+                      type="button"
+                      onClick={() => handleClick(fandom._id)}
+                    >
+                      Remove Fandom
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div>
+          <h1>Hey</h1>
+        </div>
         <form onSubmit={handleAddSubmit}>
           <div className="row">
-            {fandoms.map((fandom, index) => {
+            {filteredFandoms.map((fandom, index) => {
               return (
                 <div
                   className="card col-lg-4 col-md-6 col-sm-12"
@@ -69,18 +172,34 @@ export default function ProfileForm({ me, fandoms }) {
                     <p className="card-text">{fandom.description}</p>
                     <div className="text-center">
                       <input
+                        key={fandom._id}
+                        value={fandom._id}
                         type="checkbox"
-                        class="btn-check"
+                        onChange={handleToggle}
+                        className="btn-check"
+                        checked={userFandoms.includes(fandom._id)}
                         id="btn-check-outlined"
-                        autocomplete="off"
+                        autoComplete="off"
                       />
+
+                      {/* <button
+                            // type="checkbox"
+                            className="btn-check"
+                            id="btn-check-outlined"
+                            autoComplete="off"
+                            onclick="clicked()"
+                        />
+                        <label id="label" class="btn btn-outline-primary" for="btn-check-outlined"
+                            >Add</label> */}
                     </div>
                   </div>
                 </div>
               );
             })}
           </div>
-          <button type="submit">Submit</button>
+          <button className="btn-success" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>
