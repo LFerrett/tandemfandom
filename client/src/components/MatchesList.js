@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
+import "./assets/Matches.css";
 
 import { ADD_MATCH } from "../utils/mutations";
 import { REMOVE_MATCH } from "../utils/mutations";
@@ -153,7 +154,7 @@ export default function MatchesList({ users, me }) {
                   })}
                   <div className="text-center">
                     <button
-                      className="btn-block btn-success"
+                      className="btn-block btn-danger"
                       type="button"
                       onClick={() => handleClick(user._id)}
                     >
