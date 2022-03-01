@@ -40,7 +40,7 @@ function NavTabs() {
               </li>
               <li className="nav-item">
                 <Link className="navbar-brand nav-link" to="/Matches">
-                  Matches
+                  Find Matches
                 </Link>
               </li>
               <li className="nav-item">
