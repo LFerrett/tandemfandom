@@ -1,4 +1,4 @@
-# TandemFandom: A Fandom Dating App
+# TandemFandom: A Fandom People Finding App
 
 ## Description
 
@@ -49,7 +49,7 @@ TBD
 
 MIT License
 
-Copyright (c) 2022 PlaySpace
+Copyright (c) 2022 Tandem Fandom
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
