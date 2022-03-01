@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useMutation, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 import Auth from "../../utils/auth";
 import "./../assets/Profile.css";
 import ImageUploading from "react-images-uploading";
@@ -22,35 +22,40 @@ export default function Profile() {
   const { loading: loadingMe, data: profileData } = useQuery(GET_ME);
   const me = profileData?.me || {};
 
-  const { loading, data } = useQuery(GET_FANDOMS);
+  const { data } = useQuery(GET_FANDOMS);
   const fandoms = data?.fandoms || [];
 
 
   return (
     <div>
-      <div>
-        <h1>{`${me.firstName}'s`} Profile Page</h1>
-        <SimpleFileUpload
-          apiKey="a576e70cb4dce38730545ffcbe16a477"
-          onSuccess={handleFile}
-        />
-
-      </div>
-      <div className='upload-wrapper'>
-        <div className="img-landing">
-          <ul className="image-grid">
-            {uploadedImages.length ? (
-              uploadedImages.map((image, index) => (index === 0 &&
-                <li>
-                  <img className="img-fluid profile-img" src={image} alt="profile images" />
-                </li>
-              ))
-            ) : (
-              <p></p>
-            )}
-          </ul>
-        </div>
-      </div>
+      <h1>{`${me.firstName}'s`} Profile Page</h1>
+      { me.image ? (
+        <img src={`${me.image}`}></img>
+      ): (
+        <>
+          <div>
+            <SimpleFileUpload
+              apiKey="a576e70cb4dce38730545ffcbe16a477"
+              onSuccess={handleFile}
+            />
+          </div>
+          <div className='upload-wrapper'>
+            <div className="img-landing">
+              <ul className="image-grid">
+                {uploadedImages.length ? (
+                  uploadedImages.map((image, index) => (index === 0 &&
+                    <li>
+                      <img className="img-fluid profile-img" src={image} alt="profile images" />
+                    </li>
+                  ))
+                ) : (
+                  <p></p>
+                )}
+              </ul>
+            </div>
+          </div>
+        </>
+      )}
       {loadingMe ? (
         <div>Loading...</div>
       ) : (

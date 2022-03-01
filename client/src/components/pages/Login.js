@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
 import logo from '../images/TFLogo.svg';

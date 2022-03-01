@@ -4,11 +4,11 @@ import Auth from "../utils/auth";
 
 import { ADD_FANDOM } from "../utils/mutations";
 
-
 export default function ProfileForm({ me, fandoms }) {
+  const [addFandom] = useMutation(ADD_FANDOM);
 
-  const [userData, setUserData] = useState({});
-  const [checked, setChecked] = useState({});
+  const [userFandoms, setUserFandoms] = useState(me.fandoms);
+  //   const [checked, setChecked] = useState({});
 
   // function toggle(index) {
   //   const newData = [...userData];
@@ -25,10 +25,9 @@ export default function ProfileForm({ me, fandoms }) {
   //     this.setState({ [target.name]: value });
   // }
 
-  const userDataLength = Object.keys(userData).length;
+  //   const userDataLength = Object.keys(userData).length;
 
-  const [updatedUser, { error }] = useMutation(ADD_FANDOM);
-  const handleAddFandom = async (fandomId) => {
+  const handleAddSubmit = async (fandomId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -36,14 +35,13 @@ export default function ProfileForm({ me, fandoms }) {
     }
 
     try {
-      const { data } = await updatedUser({
-        variables: { ...userData },
+      const { data } = await addFandom({
+        variables: { _id: fandomId },
       });
 
-      setUserData(updatedUser);
-      // upon success, remove book's id from localStorage
-      // need to make in local storage js in utils
-      // addFandom(fandomId);
+      setUserFandoms(...userFandoms);
+
+      Auth.login(data.users.token);
     } catch (err) {
       console.error(err);
     }
@@ -52,7 +50,7 @@ export default function ProfileForm({ me, fandoms }) {
   return (
     <div>
       <div className="container">
-        <form action="">
+        <form onSubmit={handleAddSubmit}>
           <div className="row">
             {fandoms.map((fandom, index) => {
               return (
@@ -72,26 +70,17 @@ export default function ProfileForm({ me, fandoms }) {
                     <div className="text-center">
                       <input
                         type="checkbox"
-                        value={`${fandom._id}`}
-                        className="btn-check"
+                        class="btn-check"
                         id="btn-check-outlined"
-                        autoComplete="off"
-                        // onChange={toggle}
+                        autocomplete="off"
                       />
-                      <label
-                        id="label"
-                        className="btn btn-outline-primary"
-                        htmlFor="btn-check-outlined"
-                      >
-                        Add
-                      </label>
-                      <br></br>
                     </div>
                   </div>
                 </div>
               );
             })}
           </div>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>
