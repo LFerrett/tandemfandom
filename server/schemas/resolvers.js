@@ -9,7 +9,7 @@ const resolvers = {
         const userFound = await User.findOne({ _id: context.user._id }).select("-__v -password").populate('matches').populate('fandoms');
         console.log(userFound)
         console.log(context.user)
-        
+
         return userFound
       }
       throw new AuthenticationError('You need to be logged in!');
@@ -83,7 +83,6 @@ const resolvers = {
     },
 
     addMatch: async (parent, args, context) => {
-      console.log(args)
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
               { _id: context.user._id },
@@ -100,14 +99,15 @@ const resolvers = {
     },
     
     removeMatch: async (parent, args, context) => {
-      // if (context.user) {
+      if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
-              { _id: args._id },
-              { $pull: { matches: args.userId } },
+              { _id: context.user._id },
+              { $pull: { matches: args._id } },
               { new: true, runValidators: true }
-          ).populate('matches');
-      // }
-        return updatedUser;  
+          ).populate('matches').populate('fandoms');
+          return updatedUser;
+      }
+          
       // throw new AuthenticationError('You need to be logged in!');
       // { _id: context.user._id },
       // { $push: { fandoms: args.fandomId } },

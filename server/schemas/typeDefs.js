@@ -38,7 +38,7 @@ const typeDefs = gql`
     addFandom(_id: ID!, fandomId: ID!): User
     removeFandom(_id: ID!, fandomId: ID!): User
     addMatch(_id: ID!): User
-    removeMatch(_id: ID!, userId: ID!): User
+    removeMatch(_id: ID!): User
 
   }
 `;
