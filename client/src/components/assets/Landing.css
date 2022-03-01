@@ -37,6 +37,7 @@ h5 {
 }
 p {
   font-size: 15px;
+  color: #627e8d;
 }
 p.intro {
   margin: 12px 0 0;
@@ -138,7 +139,6 @@ a:focus,
   display: table;
   width: 100%;
   padding: 0;
-  background: url(../images/intro-bg_withlogo.png) center center no-repeat;
   background-color: #e5e5e5;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -160,7 +160,7 @@ a:focus,
   color: #5ca9fb;
 }
 .intro p {
-  color: #fff;
+  color: #627e8d;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
@@ -184,7 +184,7 @@ header .intro-text {
 }
 /* Features Section */
 #features {
-  background: #f6f6f6;
+  background: #e6f0ef;
 }
 #features i.fa {
   font-size: 38px;
