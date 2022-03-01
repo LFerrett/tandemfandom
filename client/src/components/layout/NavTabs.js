@@ -34,6 +34,11 @@ function NavTabs() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="navbar-brand nav-link" to="/Connections">
+                  Connections
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="navbar-brand nav-link" to="/Matches">
                   Matches
                 </Link>
