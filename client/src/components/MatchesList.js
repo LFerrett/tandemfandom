@@ -69,8 +69,8 @@ export default function MatchesList({ users, me }) {
       <div className="row">
         {unMatches.map((user, index) => {
           return (
-            <div className="col my-4" key={user._id}>
-              <div className="card" style={{ width: `18rem` }}>
+            <div className="m-3 d-flex flex-row"key={user._id}>
+              <div className="card" style={{ width: `18rem`}}>
                 <img
                   className="card-img-top"
                   src={`${user.image}`}
@@ -90,7 +90,7 @@ export default function MatchesList({ users, me }) {
                   })}
                   <div className="text-center">
                     <button
-                      className="btn-block btn-success"
+                      className="btn-block btn-addmatch"
                       type="button"
                       onClick={() => handleClick(user._id)}
                     >
