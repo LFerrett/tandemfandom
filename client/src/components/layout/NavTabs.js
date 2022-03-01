@@ -39,7 +39,7 @@ function NavTabs() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="navbar-brand nav-link" onClick={auth.logout()} to="/">
+                <Link className="navbar-brand nav-link" to="/">
                   Logout
                 </Link>
               </li>
