@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
+import './assets/Profileform.css';
 
 import { ADD_FANDOM } from "../utils/mutations";
 import { REMOVE_FANDOM } from "../utils/mutations";
@@ -139,7 +140,7 @@ export default function ProfileForm({ me, fandoms }) {
                   <div className="text-center">
                     <button
                       key={fandom._id}
-                      className="btn-block btn-danger"
+                      className="btn-block btn-removefandom"
                       type="button"
                       onClick={() => handleClick(fandom._id)}
                     >
@@ -152,7 +153,8 @@ export default function ProfileForm({ me, fandoms }) {
           })}
         </div>
         <div>
-          <h1>Hey</h1>
+          <hr></hr>
+          <h1>Add Your Fandoms:</h1>
         </div>
         <form onSubmit={handleAddSubmit}>
         {me.fandoms.length ? (
