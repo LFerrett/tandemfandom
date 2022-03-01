@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { useMutation} from '@apollo/client';
 import logo from '../images/TFLogo.svg';
+import "./../assets/Signup.css"
 
 import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations';
@@ -129,6 +130,7 @@ const Signup = () => {
         </Form.Group>
         
         <Button
+          className='btn btn-custom btn-lg'  
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
           variant='success'>

@@ -14,3 +14,7 @@
     max-height: 300px;
     padding-bottom: 25px;
   }
+  
+  p.card-text {
+    color: black;
+  }
