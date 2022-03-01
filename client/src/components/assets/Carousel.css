@@ -1,8 +1,10 @@
 h3 {
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-family: Railway, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 color: rgb(252, 251, 249);
 font-size: 3em;
 text-shadow: 10px;
+font-weight: 900;
+text-transform: uppercase;
 -webkit-text-stroke-width: 1px;
 -webkit-text-stroke-color: #10283e;
 }
