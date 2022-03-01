@@ -49,7 +49,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div
-          className="flex-column justify-flex-start min-100-vh"
+          className="flex-column justify-flex-start min-100-vh main-div"
           style={{
             backgroundColor: "#e6f0ef",
           }}
