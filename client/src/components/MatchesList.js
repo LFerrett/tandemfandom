@@ -13,7 +13,7 @@ export default function MatchesList({ users, me }) {
   // const [matches, setMatches] = useState(me.matches);
 
   const [addMatch, { error }] = useMutation(ADD_MATCH);
-  // const [removeMatch] = useMutation(REMOVE_MATCH);
+  const [removeMatch] = useMutation(REMOVE_MATCH);
 
   const handleClick = async (matchId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -30,30 +30,33 @@ export default function MatchesList({ users, me }) {
       setUnMatches([...unMatches.filter((match) => match._id !== matchId)]);
 
       Auth.login(data.users.token);
+
+      window.location.reload();
     } catch (err) {
       console.error(JSON.parse(JSON.stringify(err)));
     }
   };
 
-  // const handleRemoveClick = async (matchId) => {
-  //   const token = Auth.loggedIn() ? Auth.getToken() : null;
+  const handleRemoveClick = async (matchId) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-  //   if (!token) {
-  //     return false;
-  //   }
+    if (!token) {
+      return false;
+    }
 
-  //   try {
-  //     const { data } = await removeMatch({
-  //       variables: { _id: matchId },
-  //     });
+    try {
+      const { data } = await removeMatch({
+        variables: { _id: matchId },
+      });
 
-  //     setMatches([...matches.filter((match) => match._id !== matchId)]);
+      setMatches([...matches.filter((match) => match._id !== matchId)]);
 
-  //     Auth.login(data.users.token);
-  //   } catch (err) {
-  //     console.error(JSON.parse(JSON.stringify(err)));
-  //   }
-  // };
+      Auth.login(data.users.token);
+
+    } catch (err) {
+      console.error(JSON.parse(JSON.stringify(err)));
+    }
+  };
 
   useEffect(() => {
     loadMatches();
@@ -102,18 +105,18 @@ export default function MatchesList({ users, me }) {
                     {user.firstName} {user.lastName}
                   </h5>
                   <h6 className="card-text">Fandoms:</h6>
-                  {/* {user.matches.fandoms.map((fandom) => {
+                  {user.fandoms.map((fandom) => {
                     return (
                       <p className="card-text" key={fandom._id}>
                         {fandom.name}
                       </p>
                     );
-                  })} */}
+                  })}
                   <div className="text-center">
                     <button
-                      className="btn-block btn-warning"
+                      className="btn-block btn-danger"
                       type="button"
-                      onClick={() => handleClick(user._id)}
+                      onClick={() => handleRemoveClick(user._id)}
                     >
                       Remove Match
                     </button>

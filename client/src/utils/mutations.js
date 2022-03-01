@@ -84,6 +84,12 @@ export const REMOVE_MATCH = gql`
                 firstName
                 lastName
             }
+            fandoms {
+                _id
+                name
+                description
+            }
+            
         }
     }
 `;
