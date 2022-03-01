@@ -39,8 +39,8 @@ export const ADD_FANDOM = gql`
 `;
 
 export const REMOVE_FANDOM = gql`
-    mutation removeFandom($_id: ID!, $fandomId: ID! ) {
-        removeFandom(_id: $_id, fandomId: $fandomId) {
+    mutation removeFandom($_id: ID!) {
+        removeFandom(_id: $_id) {
             fandoms {
                 _id
                 name

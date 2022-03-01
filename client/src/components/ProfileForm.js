@@ -1,33 +1,43 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
 
 import { ADD_FANDOM } from "../utils/mutations";
+import { REMOVE_FANDOM } from "../utils/mutations";
 
 export default function ProfileForm({ me, fandoms }) {
   const [addFandom] = useMutation(ADD_FANDOM);
+  const [removeFandom] = useMutation(REMOVE_FANDOM);
 
   const [userFandoms, setUserFandoms] = useState(me.fandoms);
-  //   const [checked, setChecked] = useState({});
+  const [allFandoms, setFandoms] = useState();
+ 
+//   const handleToggle = ({ target }) =>
+//   setUserFandoms(s => ({ ...s, [target.name]: !s[target.name] }));
+  
+    const handleToggle = changeEvent => {
+        const { name } = changeEvent.target;
+    
+        this.setUserFandoms(prevState => ({
+        fandoms: {
+            ...prevState.fandoms,
+            [name]: !prevState.fandoms[name]
+        }
+        }));
+    }
 
-  // function toggle(index) {
-  //   const newData = [...userData];
-  //   newData.splice(index, 1, {
-  //     label: data[index].label,
-  //     checked: !data[index].checked
-  //   });
-  //   setData(newData);
-  //   onChange(newData.filter(x => x.checked));
-  // };
+    const isSelected = (fandomId) => {
+        if (userFandoms.includes(fandomId)) {
+            return "false"
+        } else {
+            return "true"
+        }
+    }
 
-  //   handleInputChange({ target }) ;{
-  //     const value = target.type === 'checkbox' ? target.checked : target.value;
-  //     this.setState({ [target.name]: value });
-  // }
+  const handleAddSubmit = async (event) => {
+      event.preventDefault();
 
-  //   const userDataLength = Object.keys(userData).length;
-
-  const handleAddSubmit = async (fandomId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
     if (!token) {
@@ -36,15 +46,19 @@ export default function ProfileForm({ me, fandoms }) {
 
     try {
       const { data } = await addFandom({
-        variables: { _id: fandomId },
+        variables: { _id: event.key },
       });
 
       setUserFandoms(...userFandoms);
 
       Auth.login(data.users.token);
     } catch (err) {
-      console.error(err);
+      console.error(JSON.parse(JSON.stringify(err)));
     }
+  };
+
+  if (!Auth.loggedIn()) {
+    return <Redirect to="/login" />
   };
 
   return (
@@ -69,11 +83,23 @@ export default function ProfileForm({ me, fandoms }) {
                     <p className="card-text">{fandom.description}</p>
                     <div className="text-center">
                       <input
+                        key={fandom._id}
                         type="checkbox"
-                        class="btn-check"
+                        onChange={handleToggle}
+                        className="btn-check"
+                        // checked={() => isSelected(fandom._id)}
                         id="btn-check-outlined"
-                        autocomplete="off"
+                        autoComplete="off"
                       />
+                      {/* <input
+                            type="checkbox"
+                            className="btn-check"
+                            id="btn-check-outlined"
+                            autoComplete="off"
+                            onclick="clicked()"
+                        />
+                        <label id="label" class="btn btn-outline-primary" for="btn-check-outlined"
+                            >Add</label> */}
                     </div>
                   </div>
                 </div>

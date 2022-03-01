@@ -52,30 +52,30 @@ const resolvers = {
     },
 
     addFandom: async (parent, args, context) => {
-      // if (context.user) {
+      if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
-              { _id: args._id },
-              { $addToSet: { fandoms: { _id: args.fandomId } } },
+              { _id: context.user._id },
+              { $addToSet: { fandoms: { _id: args._id } } },
               { new: true, runValidators: true }
           );
-      // }
       return updatedUser; 
+      }
       // throw new AuthenticationError('You need to be logged in!');
       // { _id: context.user._id },
       // { $push: { fandoms: args.fandomId } },
     },
 
     removeFandom: async (parent, args, context) => {
-      // if (context.user) {
+      if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
-            { _id: args._id },
-            { $pull: { fandoms: args.fandomId } },
+          { _id: context.user._id },
+            { $pull: { fandoms: args._id } },
             { new: true, runValidators: true }
         );
         return updatedUser;
         // if (!updatedUser) {
         //     return res.status(404).json({ message: "Couldn't find user with this id!" });
-        //   }
+          }
       // }
 
       // throw new AuthenticationError('You need to be logged in!');
