@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
@@ -7,12 +7,12 @@ import { ADD_MATCH } from "../utils/mutations";
 import { REMOVE_MATCH } from "../utils/mutations";
 
 export default function MatchesList({ users, me }) {
-  console.log({ users }, { me });
+  // console.log({ users }, { me });
   const [unMatches, setUnMatches] = useState([]);
   const [matches, setMatches] = useState(me.matches);
   // const [matches, setMatches] = useState(me.matches);
 
-  const [addMatch, { error }] = useMutation(ADD_MATCH);
+  const [addMatch] = useMutation(ADD_MATCH);
   const [removeMatch] = useMutation(REMOVE_MATCH);
 
   const handleClick = async (matchId) => {
@@ -52,7 +52,8 @@ export default function MatchesList({ users, me }) {
       setMatches([...matches.filter((match) => match._id !== matchId)]);
 
       Auth.login(data.users.token);
-
+      
+      window.location.reload();
     } catch (err) {
       console.error(JSON.parse(JSON.stringify(err)));
     }
@@ -64,13 +65,13 @@ export default function MatchesList({ users, me }) {
   
   function loadMatches() {
     const notMeUsers = users.filter((user) => user._id !== me._id);
-    console.log(notMeUsers);
+    // console.log(notMeUsers);
 
     const meMatches = me.matches.map((match) => match._id);
-    console.log(meMatches);
+    // console.log(meMatches);
 
     const unmatchedUsers = notMeUsers.filter((user, index) => {
-      console.log(meMatches[index]);
+      // console.log(meMatches[index]);
       if (meMatches[index] === undefined) {
         return true;
       } else {
@@ -83,9 +84,9 @@ export default function MatchesList({ users, me }) {
   }
   
 
-  // if (!Auth.loggedIn()) {
-  //   return <Redirect to="/login" />
-  // };
+  if (!Auth.loggedIn()) {
+    return <Redirect to="/login" />
+  };
 
   return (
     <div>
