@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
+import "./assets/Matches.css";
 
 import { REMOVE_MATCH } from "../utils/mutations";
 
@@ -44,7 +45,7 @@ export default function ConnectionList({ users, me }) {
         <div className="row">
           {matches.map((user, index) => {
             return (
-              <div className="col my-4" key={user._id}>
+              <div className="m-3 d-flex flex-row" key={user._id}>
                 <div className="card" style={{ width: `18rem` }}>
                   <img
                     className="card-img-top"
