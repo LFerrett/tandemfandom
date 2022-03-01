@@ -41,7 +41,7 @@ const Login = (props) => {
 
   return (
     <>
-      <div class="text-center">
+      <div className="text-center">
         <img src={logo} width="300" alt="Tandem Fandom" />
       </div>
     

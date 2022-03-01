@@ -36,7 +36,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!, firstName: String!, lastName: String!): Auth
 
     addFandom(fandomsArray: [ID]!): User
-    removeFandom(fandomsArray: [ID]!): User
+    removeFandom(_id: ID!): User
     addMatch(_id: ID!): User
     removeMatch(_id: ID!): User
 

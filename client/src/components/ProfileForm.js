@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { useMutation, useQuery } from "@apollo/client";
 import Auth from "../utils/auth";
@@ -11,10 +11,8 @@ export default function ProfileForm({ me, fandoms }) {
   const [removeFandom] = useMutation(REMOVE_FANDOM);
 
   const [userFandoms, setUserFandoms] = useState(me.fandoms);
-  // const [selectedFandoms, setSelectedFandoms] = useState([]);
-
-  //   const handleToggle = ({ target }) =>
-  //   setUserFandoms(s => ({ ...s, [target.name]: !s[target.name] }));
+  const [selectedFandoms, setSelectedFandoms] = useState([]);
+  const [filteredFandoms, setFilteredFandoms] = useState([]);
 
   const handleToggle = (e) => {
     const { value } = e.currentTarget;
@@ -27,22 +25,42 @@ export default function ProfileForm({ me, fandoms }) {
       : (fandomArray = [...userFandoms, value]);
     // Set the array of song IDs in state
     setUserFandoms(fandomArray);
-
-    // this.setUserFandoms(prevState => ({
-    // fandoms: {
-    //     ...prevState.fandoms,
-    //     [name]: !prevState.fandoms[name]
-    // }
-    // }));
   };
 
-  // const isSelected = (fandomId) => {
-  //     if (userFandoms.includes(fandomId)) {
-  //         return "false"
-  //     } else {
-  //         return "true"
-  //     }
-  // }
+  const handleClick = async (fandomId) => {
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const { data } = await removeFandom({
+        variables: { _id: fandomId },
+      });
+      console.log(data);
+
+      setSelectedFandoms([...data.fandoms]);
+
+      Auth.login(data.users.token);
+    } catch (err) {
+      console.error(JSON.parse(JSON.stringify(err)));
+    }
+  };
+
+  const loadFilteredFandoms = () => {
+    let filteredFandom = [];
+    let oneFilter
+    for (let i = 0; i < userFandoms.length; i++) {
+      const oneFandom = userFandoms[i];
+      console.log(oneFandom._id)
+      oneFilter = fandoms.filter((banana) => banana._id !== oneFandom._id);
+      filteredFandom.concat(oneFilter)
+    }
+    console.log({filteredFandom})
+
+    setFilteredFandoms([...filteredFandom]);
+  };
 
   const handleAddSubmit = async (event) => {
     event.preventDefault();
@@ -53,17 +71,26 @@ export default function ProfileForm({ me, fandoms }) {
       return false;
     }
 
+    let fandomsToSubmit;
+    if (userFandoms.length) {
+      fandomsToSubmit = userFandoms.map((fandom) => fandom._id || fandom);
+    }
+
     try {
       const { data } = await addFandom({
-        variables: { fandomsArray: [...userFandoms] },
+        variables: { fandomsArray: [...fandomsToSubmit] },
       });
-      console.log(data)
+      console.log(data);
 
       Auth.login(data.users.token);
     } catch (err) {
       console.error(JSON.parse(JSON.stringify(err)));
     }
   };
+
+  useEffect(() => {
+    loadFilteredFandoms();
+  }, []);
 
   if (!Auth.loggedIn()) {
     return <Redirect to="/login" />;
@@ -72,9 +99,39 @@ export default function ProfileForm({ me, fandoms }) {
   return (
     <div>
       <div className="container">
+        <div className="row">
+          {userFandoms.map((fandom, index) => {
+            return (
+              <div
+                className="card col-lg-4 col-md-6 col-sm-12"
+                style={{ width: `18rem` }}
+                key={fandom._id}
+              >
+                <img
+                  className="card-img-top"
+                  src={`${fandom.image}`}
+                  alt={`${fandom.name} logo`}
+                />
+                <div className="card-body">
+                  <h5 className="card-title text-center">{fandom.name}</h5>
+                  <div className="text-center">
+                    <button
+                      key={fandom._id}
+                      className="btn-block btn-danger"
+                      type="button"
+                      onClick={() => handleClick(fandom._id)}
+                    >
+                      Remove Fandom
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
         <form onSubmit={handleAddSubmit}>
           <div className="row">
-            {fandoms.map((fandom, index) => {
+            {filteredFandoms.map((fandom, index) => {
               return (
                 <div
                   className="card col-lg-4 col-md-6 col-sm-12"
@@ -100,6 +157,7 @@ export default function ProfileForm({ me, fandoms }) {
                         id="btn-check-outlined"
                         autoComplete="off"
                       />
+
                       {/* <button
                             // type="checkbox"
                             className="btn-check"
@@ -115,7 +173,9 @@ export default function ProfileForm({ me, fandoms }) {
               );
             })}
           </div>
-          <button className="btn-success" type="submit">Submit</button>
+          <button className="btn-success" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>
