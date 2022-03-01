@@ -9,7 +9,7 @@ function CarouselComponent() {
           <img
             className="d-block w-100"
             src={require("./../images/Slider1.png")}
-            alt="First slide" />
+            alt="Comic Con aerial view" />
           <Carousel.Caption>
             <h3>Convention Retention</h3>
             <p>Meet your matches at local conventions</p>
@@ -20,7 +20,7 @@ function CarouselComponent() {
           <img
             className="d-block w-100"
             src={require("./../images/Slider2.png")}
-            alt="Second slide" />
+            alt="Cosplaying women" />
           <Carousel.Caption>
             <h3>LLLCoolJ</h3>
             <p>Larping Ladies Love Cool Jedi</p>
@@ -31,7 +31,7 @@ function CarouselComponent() {
           <img
             className="d-block w-100"
             src={require("./../images/Slider3.png")}
-            alt="Third slide" />
+            alt="Two stormtroopers playing" />
           <Carousel.Caption>
             <h3>Stormtrooper Bloopers</h3>
             <p>"I hit him", said no Stormtrooper ever</p>
@@ -42,10 +42,10 @@ function CarouselComponent() {
           <img
             className="d-block w-100"
             src={require("./../images/Slider4.png")}
-            alt="Fourth slide" />
+            alt="MCU cosplay in the woods" />
           <Carousel.Caption>
             <h3>Maintain a safe distance</h3>
-            <p>Socially distant swordfighting</p>
+            <p>Add matches for socially distant swordfighting</p>
           </Carousel.Caption>
         </Carousel.Item>
 
@@ -53,7 +53,7 @@ function CarouselComponent() {
           <img
             className="d-block w-100"
             src={require("./../images/Slider5.png")}
-            alt="Fifth slide" />
+            alt="Two couples in cosplay on the convention floor" />
           <Carousel.Caption>
             <h3>Difference between war and peace</h3>
             <p>The couple that fights together, stays together</p>
