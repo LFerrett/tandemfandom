@@ -155,35 +155,36 @@ export default function ProfileForm({ me, fandoms }) {
           <h1>Hey</h1>
         </div>
         <form onSubmit={handleAddSubmit}>
-          <div className="row">
-            {filteredFandoms.map((fandom, index) => {
-              return (
-                <div
-                  className="card col-lg-4 col-md-6 col-sm-12"
-                  style={{ width: `18rem` }}
-                  key={fandom._id}
-                >
-                  <img
-                    className="card-img-top"
-                    src={`${fandom.image}`}
-                    alt={`${fandom.name} logo`}
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title text-center">{fandom.name}</h5>
-                    <p className="card-text">{fandom.description}</p>
-                    <div className="text-center">
-                      <input
-                        key={fandom._id}
-                        value={fandom._id}
-                        type="checkbox"
-                        onChange={handleToggle}
-                        className="slider round"
-                        checked={userFandoms.includes(fandom._id)}
-                        id="btn-check-outlined"
-                        autoComplete="off"
-                      />
+        {me.fandoms.length ? (
+            <div className="row">
+              {filteredFandoms.map((fandom, index) => {
+                return (
+                  <div
+                    className="card col-lg-4 col-md-6 col-sm-12"
+                    style={{ width: `18rem` }}
+                    key={fandom._id}
+                  >
+                    <img
+                      className="card-img-top"
+                      src={`${fandom.image}`}
+                      alt={`${fandom.name} logo`}
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title text-center">{fandom.name}</h5>
+                      <p className="card-text">{fandom.description}</p>
+                      <div className="text-center">
+                        <input
+                          key={fandom._id}
+                          value={fandom._id}
+                          type="checkbox"
+                          onChange={handleToggle}
+                          className="btn-check"
+                          checked={userFandoms.includes(fandom._id)}
+                          id="btn-check-outlined"
+                          autoComplete="off"
+                        />
 
-                      {/* <button
+                        {/* <button
                             // type="checkbox"
                             className="btn-check"
                             id="btn-check-outlined"
@@ -192,13 +193,58 @@ export default function ProfileForm({ me, fandoms }) {
                         />
                         <label id="label" class="btn btn-outline-primary" for="btn-check-outlined"
                             >Add</label> */}
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
-          <button className="btn-addfandom" type="submit">
+                );
+              })}
+            </div>
+          ) : (
+            <div className="row">
+              {fandoms.map((fandom, index) => {
+                return (
+                  <div
+                    className="card col-lg-4 col-md-6 col-sm-12"
+                    style={{ width: `18rem` }}
+                    key={fandom._id}
+                  >
+                    <img
+                      className="card-img-top"
+                      src={`${fandom.image}`}
+                      alt={`${fandom.name} logo`}
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title text-center">{fandom.name}</h5>
+                      <p className="card-text">{fandom.description}</p>
+                      <div className="text-center">
+                        <input
+                          key={fandom._id}
+                          value={fandom._id}
+                          type="checkbox"
+                          onChange={handleToggle}
+                          className="btn-check"
+                          checked={userFandoms.includes(fandom._id)}
+                          id="btn-check-outlined"
+                          autoComplete="off"
+                        />
+
+                        {/* <button
+                            // type="checkbox"
+                            className="btn-check"
+                            id="btn-check-outlined"
+                            autoComplete="off"
+                            onclick="clicked()"
+                        />
+                        <label id="label" class="btn btn-outline-primary" for="btn-check-outlined"
+                            >Add</label> */}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+          <button className="btn-success" type="submit">
             Submit
           </button>
         </form>
