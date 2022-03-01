@@ -2,10 +2,6 @@
   background-color: #627e8d; 
 }
 
-.navbar-brand:hover {
-  color: white;
-}
-
 @media (max-width: 912px) {
   .brand-logo{
     margin-left: 0rem;
