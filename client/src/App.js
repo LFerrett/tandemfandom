@@ -7,7 +7,7 @@ import Main from "./components/pages/Main";
 import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
 import Matches from "./components/pages/Matches";
-// import YourMatches from "./components/pages/Connections"
+import Connections from "./components/pages/Connections"
 import Profile from "./components/pages/Profile";
 import Header from "./components/layout/NavTabs";
 import Footer from "./components/layout/Footer";
@@ -72,9 +72,9 @@ function App() {
               <Matches />
             </Route>
 
-            {/* <Route exact path="/yourmatches">
-              <YourMatches />
-            </Route> */}
+            <Route exact path="/connections">
+              <Connections />
+            </Route>
 
             <Route exact path="/login">
               <Login />

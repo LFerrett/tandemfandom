@@ -4,16 +4,12 @@ import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 
 import { ADD_MATCH } from "../utils/mutations";
-import { REMOVE_MATCH } from "../utils/mutations";
 
 export default function MatchesList({ users, me, refetch }) {
   // console.log({ users }, { me });
   const [unMatches, setUnMatches] = useState([]);
-  const [matches, setMatches] = useState(me.matches);
-  // const [matches, setMatches] = useState(me.matches);
 
   const [addMatch] = useMutation(ADD_MATCH);
-  const [removeMatch] = useMutation(REMOVE_MATCH);
 
   const handleClick = async (matchId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -37,27 +33,6 @@ export default function MatchesList({ users, me, refetch }) {
     }
   };
 
-  const handleRemoveClick = async (matchId) => {
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-    if (!token) {
-      return false;
-    }
-
-    try {
-      const { data } = await removeMatch({
-        variables: { _id: matchId },
-      });
-
-      setMatches([...matches.filter((match) => match._id !== matchId)]);
-
-      Auth.login(data.users.token);
-      
-      refetch()
-    } catch (err) {
-      console.error(JSON.parse(JSON.stringify(err)));
-    }
-  };
 
   useEffect(() => {
     loadUnMatches();
@@ -90,44 +65,6 @@ export default function MatchesList({ users, me, refetch }) {
 
   return (
     <div>
-      <h1>Your Matches</h1>
-      <div className="row">
-        {matches.map((user, index) => {
-          return (
-            <div className="col my-4" key={user._id}>
-              <div className="card" style={{ width: `18rem` }}>
-                <img
-                  className="card-img-top"
-                  src={`${user.image}`}
-                  alt="users profile"
-                />
-                <div className="card-body">
-                  <h5 className="card-title text-center">
-                    {user.firstName} {user.lastName}
-                  </h5>
-                  <h6 className="card-text">Fandoms:</h6>
-                  {user.fandoms.map((fandom) => {
-                    return (
-                      <p className="card-text" key={fandom._id}>
-                        {fandom.name}
-                      </p>
-                    );
-                  })}
-                  <div className="text-center">
-                    <button
-                      className="btn-block btn-danger"
-                      type="button"
-                      onClick={() => handleRemoveClick(user._id)}
-                    >
-                      Remove Match
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
       <h1>Potential Matches</h1>
       <div className="row">
         {unMatches.map((user, index) => {
