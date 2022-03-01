@@ -1,171 +1,19 @@
 [
   {
+    "username": "april",
+    "email": "april@email.com",
+    "password": "password23",
+    "firstName": "April",
+    "lastName": "Schauers",
+    "image": "./images/users/f-011.png"
+  },
+  {
     "username": "rocky",
     "email": "therock@rocksmock.com",
     "password": "password01",
     "firstName": "Rocky",
     "lastName": "Rhoades",
     "image": "./images/users/m-001.png"
-  },
-  {
-    "username": "myles",
-    "email": "mylesd00d@email.biz",
-    "password": "password02",
-    "firstName": "Myles",
-    "lastName": "Long",
-    "image": "./images/users/m-002.png"
-  },
-  {
-    "username": "pepe",
-    "email": "pepethepizzaman@gmail.com",
-    "password": "password03",
-    "firstName": "Pepe",
-    "lastName": "Rowny",
-    "image": "./images/users/m-003.png"
-  },
-  {
-    "username": "russell",
-    "email": "russell@russell.org",
-    "password": "password04",
-    "firstName": "Russell",
-    "lastName": "Sprouts",
-    "image": "./images/users/m-004.png"
-  },
-  {
-    "username": "jack",
-    "email": "jackpott@jack.net",
-    "password": "password05",
-    "firstName": "Jack",
-    "lastName": "Pott",
-    "image": "./images/users/m-005.png"
-  },
-  {
-    "username": "harry",
-    "email": "mynameisharry@email.com",
-    "password": "password06",
-    "firstName": "Harry",
-    "lastName": "Legg",
-    "image": "./images/users/m-006.png"
-  },
-  {
-    "username": "corey",
-    "email": "corey@gmail.com",
-    "password": "password07",
-    "firstName": "Corey",
-    "lastName": "Ander",
-    "image": "./images/users/m-007.png"
-  },
-  {
-    "username": "alfred",
-    "email": "myemail@email.net",
-    "password": "password08",
-    "firstName": "Al",
-    "lastName": "Fresco",
-    "image": "./images/users/m-008.png"
-  },
-  {
-    "username": "adam",
-    "email": "adam@email.com",
-    "password": "password09",
-    "firstName": "Adam",
-    "lastName": "Zappel",
-    "image": "./images/users/m-009.png"
-  },
-  {
-    "username": "forrest",
-    "email": "forrest@sierraclub.org",
-    "password": "password10",
-    "firstName": "Forrest",
-    "lastName": "Green",
-    "image": "./images/users/m-010.png"
-  },
-  {
-    "username": "jay",
-    "email": "jay@email.net",
-    "password": "password11",
-    "firstName": "Jay",
-    "lastName": "Walker",
-    "image": "./images/users/m-011.png"
-  },
-  {
-    "username": "mike",
-    "email": "mike@mike.net",
-    "password": "password12",
-    "firstName": "Mike",
-    "lastName": "Stand",
-    "image": "./images/users/m-012.png"
-  },
-  {
-    "username": "olive",
-    "email": "heyitsolive@email.net",
-    "password": "password13",
-    "firstName": "Olive",
-    "lastName": "Branch",
-    "image": "./images/users/f-001.png"
-  },
-  {
-    "username": "kerri",
-    "email": "kerrioki@karoake.com",
-    "password": "password14",
-    "firstName": "Kerri",
-    "lastName": "Oki",
-    "image": "./images/users/f-002.png"
-  },
-  {
-    "username": "claire",
-    "email": "claire@claires.com",
-    "password": "password15",
-    "firstName": "Claire",
-    "lastName": "Annette",
-    "image": "./images/users/f-003.png"
-  },
-  {
-    "username": "marcia",
-    "email": "marcia@gmail.com",
-    "password": "password16",
-    "firstName": "Marcia",
-    "lastName": "Mellow",
-    "image": "./images/users/f-004.png"
-  },
-  {
-    "username": "sue",
-    "email": "sue@email.net",
-    "password": "password17",
-    "firstName": "Sue",
-    "lastName": "Flay",
-    "image": "./images/users/f-005.png"
-  },
-  {
-    "username": "tish",
-    "email": "tish@email.com",
-    "password": "password18",
-    "firstName": "Tish",
-    "lastName": "Hughes",
-    "image": "./images/users/f-006.png"
-  },
-  {
-    "username": "sally",
-    "email": "sally@sally.org",
-    "password": "password19",
-    "firstName": "Sally",
-    "lastName": "Mander",
-    "image": "./images/users/f-007.png"
-  },
-  {
-    "username": "hazel",
-    "email": "hazel@email.net",
-    "password": "password20",
-    "firstName": "Hazel",
-    "lastName": "Nutt",
-    "image": "./images/users/f-008.png"
-  },
-  {
-    "username": "dinah",
-    "email": "dinah@gmail.com",
-    "password": "password21",
-    "firstName": "Dinah",
-    "lastName": "Soares",
-    "image": "./images/users/f-009.png"
   },
   {
     "username": "bea",
@@ -176,12 +24,156 @@
     "image": "./images/users/f-010.png"
   },
   {
-    "username": "april",
-    "email": "april@email.com",
-    "password": "password23",
-    "firstName": "April",
-    "lastName": "Schauers",
-    "image": "./images/users/f-011.png"
+    "username": "myles",
+    "email": "mylesd00d@email.biz",
+    "password": "password02",
+    "firstName": "Myles",
+    "lastName": "Long",
+    "image": "./images/users/m-002.png"
+  },
+  {
+    "username": "dinah",
+    "email": "dinah@gmail.com",
+    "password": "password21",
+    "firstName": "Dinah",
+    "lastName": "Soares",
+    "image": "./images/users/f-009.png"
+  },
+  {
+    "username": "pepe",
+    "email": "pepethepizzaman@gmail.com",
+    "password": "password03",
+    "firstName": "Pepe",
+    "lastName": "Rowny",
+    "image": "./images/users/m-003.png"
+  },
+  {
+    "username": "tish",
+    "email": "tish@email.com",
+    "password": "password18",
+    "firstName": "Tish",
+    "lastName": "Hughes",
+    "image": "./images/users/f-006.png"
+  },
+  {
+    "username": "russell",
+    "email": "russell@russell.org",
+    "password": "password04",
+    "firstName": "Russell",
+    "lastName": "Sprouts",
+    "image": "./images/users/m-004.png"
+  },
+  {
+    "username": "sally",
+    "email": "sally@sally.org",
+    "password": "password19",
+    "firstName": "Sally",
+    "lastName": "Mander",
+    "image": "./images/users/f-007.png"
+  },
+  {
+    "username": "jack",
+    "email": "jackpott@jack.net",
+    "password": "password05",
+    "firstName": "Jack",
+    "lastName": "Pott",
+    "image": "./images/users/m-005.png"
+  },
+  {
+    "username": "kerri",
+    "email": "kerrioki@karoake.com",
+    "password": "password14",
+    "firstName": "Kerri",
+    "lastName": "Oki",
+    "image": "./images/users/f-002.png"
+  },
+  {
+    "username": "harry",
+    "email": "mynameisharry@email.com",
+    "password": "password06",
+    "firstName": "Harry",
+    "lastName": "Legg",
+    "image": "./images/users/m-006.png"
+  },
+  {
+    "username": "marcia",
+    "email": "marcia@gmail.com",
+    "password": "password16",
+    "firstName": "Marcia",
+    "lastName": "Mellow",
+    "image": "./images/users/f-004.png"
+  },
+  {
+    "username": "corey",
+    "email": "corey@gmail.com",
+    "password": "password07",
+    "firstName": "Corey",
+    "lastName": "Ander",
+    "image": "./images/users/m-007.png"
+  },
+  {
+    "username": "sue",
+    "email": "sue@email.net",
+    "password": "password17",
+    "firstName": "Sue",
+    "lastName": "Flay",
+    "image": "./images/users/f-005.png"
+  },
+  {
+    "username": "alfred",
+    "email": "myemail@email.net",
+    "password": "password08",
+    "firstName": "Al",
+    "lastName": "Fresco",
+    "image": "./images/users/m-008.png"
+  },
+  {
+    "username": "hazel",
+    "email": "hazel@email.net",
+    "password": "password20",
+    "firstName": "Hazel",
+    "lastName": "Nutt",
+    "image": "./images/users/f-008.png"
+  },
+  {
+    "username": "adam",
+    "email": "adam@email.com",
+    "password": "password09",
+    "firstName": "Adam",
+    "lastName": "Zappel",
+    "image": "./images/users/m-009.png"
+  },
+  {
+    "username": "claire",
+    "email": "claire@claires.com",
+    "password": "password15",
+    "firstName": "Claire",
+    "lastName": "Annette",
+    "image": "./images/users/f-003.png"
+  },
+  {
+    "username": "forrest",
+    "email": "forrest@sierraclub.org",
+    "password": "password10",
+    "firstName": "Forrest",
+    "lastName": "Green",
+    "image": "./images/users/m-010.png"
+  },
+  {
+    "username": "olive",
+    "email": "heyitsolive@email.net",
+    "password": "password13",
+    "firstName": "Olive",
+    "lastName": "Branch",
+    "image": "./images/users/f-001.png"
+  },
+  {
+    "username": "jay",
+    "email": "jay@email.net",
+    "password": "password11",
+    "firstName": "Jay",
+    "lastName": "Walker",
+    "image": "./images/users/m-011.png"
   },
   {
     "username": "anna",
@@ -190,5 +182,13 @@
     "firstName": "Anna",
     "lastName": "Conda",
     "image": "./images/users/f-012.png"
+  },
+  {
+    "username": "mike",
+    "email": "mike@mike.net",
+    "password": "password12",
+    "firstName": "Mike",
+    "lastName": "Stand",
+    "image": "./images/users/m-012.png"
   }
 ]
