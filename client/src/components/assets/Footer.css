@@ -1,8 +1,8 @@
 .footer {
   margin-top: 1rem;
+  margin-bottom: -10rem;
   padding: 1rem;
   background-color: #10283e;
-  position: sticky;
   bottom: 0;
   left: 0;
   width: 100%;
