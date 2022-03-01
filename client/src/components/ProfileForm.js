@@ -152,7 +152,8 @@ export default function ProfileForm({ me, fandoms }) {
           })}
         </div>
         <div>
-          <h1>Hey</h1>
+          <hr></hr>
+          <h1>Add Your Fandoms:</h1>
         </div>
         <form onSubmit={handleAddSubmit}>
         {me.fandoms.length ? (
