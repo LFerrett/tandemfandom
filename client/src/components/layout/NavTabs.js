@@ -8,7 +8,7 @@ import auth from "../../utils/auth";
 
 function NavTabs() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light py-3">
+    <nav className="navbar navbar-expand-lg navbar-light py-3 sticky-top">
       <a className="navbar-brand" href="/">
         <img src={logo} width="125" alt="Tandem Fandom" />
       </a>

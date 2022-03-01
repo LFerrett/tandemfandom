@@ -167,6 +167,16 @@ a:focus,
   margin: 0 auto;
   margin-bottom: 60px;
 }
+.welcome-text {
+  position: relative;
+  top: 6rem;
+}
+
+.btn-intro {
+  position: relative;
+  top: 4.3rem;
+}
+
 header .intro-text {
   padding-top: -100px;
   padding-bottom: 10px;
