@@ -29,32 +29,30 @@ function NavTabs() {
           {auth.loggedIn() && (
             <>
               <li className="nav-item">
-                <Link className="navbar-brand" to="/Profile">
+                <Link className="navbar-brand nav-link" to="/Profile">
                   Profile
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="navbar-brand" to="/Matches">
+                <Link className="navbar-brand nav-link" to="/Matches">
                   Matches
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="navbar-brand nav-link" onClick={auth.logout()} to="/">
-                  Logout
-                </Link>
+                <Link className="navbar-brand nav-link" to="/" onClick={auth.logout}>Logout</Link>
               </li>
             </>
           )}
           {!auth.loggedIn() && (
             <>
               <li className="nav-item">
-                <Link className="navbar-brand" to="/Login">
+                <Link className="navbar-brand nav-link" to="/Login">
                   Login
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link className="navbar-brand" to="/Signup">
+                <Link className="navbar-brand nav-link" to="/Signup">
                   Signup
                 </Link>
               </li>

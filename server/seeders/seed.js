@@ -9,8 +9,8 @@ db.once('open', async () => {
     await Fandom.deleteMany({});
     await User.create(profileSeeds);
     await Fandom.create(fandomSeeds);
-    const allFandoms = await Fandom.find({})
-    const allUsers = await Users.find({})
+    // const allFandoms = await Fandom.find({})
+    // const allUsers = await Users.find({})
 
 
     // const fandomIds = allFandoms.map(fandom => fandom._id)
