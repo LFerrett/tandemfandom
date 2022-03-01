@@ -66,7 +66,7 @@ export default function MatchesList({ users, me, refetch }) {
 
   return (
     <div>
-      <h1>Potential Matches</h1>
+      <h1>Find Potential Matches</h1>
       <div className="row">
         {unMatches.map((user, index) => {
           return (

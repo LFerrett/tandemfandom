@@ -155,7 +155,7 @@ export default function ProfileForm({ me, fandoms }) {
           <h1>Hey</h1>
         </div>
         <form onSubmit={handleAddSubmit}>
-          {me.fandoms.length ? (
+        {me.fandoms.length ? (
             <div className="row">
               {filteredFandoms.map((fandom, index) => {
                 return (
