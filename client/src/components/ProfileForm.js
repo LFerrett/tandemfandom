@@ -126,8 +126,8 @@ export default function ProfileForm({ me, fandoms }) {
           {userFandoms.map((fandom, index) => {
             return (
               <div
-                className="card col-lg-4 col-md-6 col-sm-12"
-                style={{ width: `18rem` }}
+                className="card col-lg-2 col-md-3 col-sm-12 col-xs-12 m-2"
+                style={{ width: "100px" }}
                 key={fandom._id}
               >
                 <img
@@ -136,7 +136,6 @@ export default function ProfileForm({ me, fandoms }) {
                   alt={`${fandom.name} logo`}
                 />
                 <div className="card-body">
-                  <h5 className="card-title text-center">{fandom.name}</h5>
                   <div className="text-center">
                     <button
                       key={fandom._id}
@@ -144,7 +143,7 @@ export default function ProfileForm({ me, fandoms }) {
                       type="button"
                       onClick={() => handleClick(fandom._id)}
                     >
-                      Remove Fandom
+                      <i class="fa fa-times" aria-hidden="true"></i>
                     </button>
                   </div>
                 </div>
@@ -161,43 +160,43 @@ export default function ProfileForm({ me, fandoms }) {
             <div className="row">
               {filteredFandoms.map((fandom, index) => {
                 return (
-                  <div
-                    className="card col-lg-4 col-md-6 col-sm-12"
-                    style={{ width: `18rem` }}
-                    key={fandom._id}
-                  >
-                    <img
-                      className="card-img-top"
-                      src={`${fandom.image}`}
-                      alt={`${fandom.name} logo`}
-                    />
-                    <div className="card-body">
-                      <h5 className="card-title text-center">{fandom.name}</h5>
-                      <p className="card-text">{fandom.description}</p>
-                      <div className="text-center">
-                        <input
-                          key={fandom._id}
-                          value={fandom._id}
-                          type="checkbox"
-                          onChange={handleToggle}
-                          className="btn-check"
-                          checked={userFandoms.includes(fandom._id)}
-                          id="btn-check-outlined"
-                          autoComplete="off"
-                        />
-
-                        {/* <button
-                            // type="checkbox"
+                    <div
+                      className="card col-lg-4 col-md-6 col-sm-12"
+                      style={{ width: `18rem` }}
+                      key={fandom._id}
+                    >
+                      <img
+                        className="card-img-top"
+                        src={`${fandom.image}`}
+                        alt={`${fandom.name} logo`}
+                      />
+                      <div className="card-body">
+                        <h5 className="card-title text-center">{fandom.name}</h5>
+                        <p className="card-text">{fandom.description}</p>
+                        <div className="text-center">
+                          <input
+                            key={fandom._id}
+                            value={fandom._id}
+                            type="checkbox"
+                            onChange={handleToggle}
                             className="btn-check"
+                            checked={userFandoms.includes(fandom._id)}
                             id="btn-check-outlined"
                             autoComplete="off"
-                            onclick="clicked()"
-                        />
-                        <label id="label" class="btn btn-outline-primary" for="btn-check-outlined"
-                            >Add</label> */}
+                          />
+
+                          {/* <button
+                              // type="checkbox"
+                              className="btn-check"
+                              id="btn-check-outlined"
+                              autoComplete="off"
+                              onclick="clicked()"
+                          />
+                          <label id="label" class="btn btn-outline-primary" for="btn-check-outlined"
+                              >Add</label> */}
+                        </div>
                       </div>
                     </div>
-                  </div>
                 );
               })}
             </div>
@@ -246,9 +245,12 @@ export default function ProfileForm({ me, fandoms }) {
               })}
             </div>
           )}
-          <button className="btn-success" type="submit">
-            Submit
-          </button>
+          <div className="text-center">
+            <button className="btn-addfandom btn-lg px-5 mt-5" 
+            type="submit">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>

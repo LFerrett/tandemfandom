@@ -30,7 +30,7 @@ export default function Profile() {
     <div>
       <h1>{`${me.firstName}'s`} Profile Page</h1>
       { me.image ? (
-        <img src={`${me.image}`} className='mx-auto d-block border border-light shadow-lg rounded-circle'></img>
+        <img src={`${me.image}`} style={{ width: `50%`}} className='img-fluid mx-auto d-block border border-light shadow-lg rounded-circle'></img>
       ): (
         <>
           <div>
