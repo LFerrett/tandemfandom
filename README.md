@@ -2,7 +2,7 @@
 
 ## Description
 
-A fully functioning user friendly web application designed for those seeking to match users with similar interests by their specific fandom. Users can use application to find love, friendship, network, etc. in a safe and responsive environment.
+A user friendly web application designed for those seeking to match users with similar interests by their specific fandom. Users can use application to find love, friendship, network, etc. in a safe and responsive environment.
 
 TandomFandom is MERN stack app, was made combining a Node.js/Express.js server with a React front-end. The back-end also includes MongoDB with GraphQL. Furthermore, JWT was used to implement authentication for all users.
 
@@ -32,12 +32,15 @@ To run the app locally, clone the repository to your local development environme
 ```md
 AS A person looking for a significant other or a friend
 I WANT an application that I can use to find other people in the same fandoms as me
-SO THAT I can talk to and meet other people with the same interests
+SO THAT I can talk to and meet others with the same interests
 ```
 
 ## Usage
+Below are some views of TandemFandom in action:
+![Screenshot of Final Project](./client/src/components/images/screenshots/landing.png)
+<img src="./client/src/components/images/screenshots/profile.png" alt="Profile - Mobile" width="300"/>
+<img src="./client/src/components/images/screenshots/find-match.png" alt="Find Match - Mobile" width="300"/>
 
-![Screenshot of Final Code]
 
 ## Credits
 
